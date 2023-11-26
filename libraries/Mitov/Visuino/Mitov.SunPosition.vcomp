@@ -1,0 +1,37 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [Category( TArduinoAstronomyToolbarCategory )]
+  TArduinoBasicCelestialBodyPosition : TArduinoComponent
+
+    [OWPrimaryPin]
+    TimeInputPin : TOWArduinoDateTimeSinkPin
+
+    [OWPrimaryPin]
+    ElevationOutputPin : TOWArduinoAnalogSourcePin
+
+    [OWPrimaryPin]
+    AzimuthOutputPin : TOWArduinoAnalogSourcePin
+
+    [ValueRange( -180, 180 )]
+    [ArduinoUseBindingCheckSetter( 'CalculateOutput' )]
+    Longitude : Single = 0.0
+
+    [ValueRange( -90, 90 )]
+    [ArduinoUseBindingCheckSetter( 'CalculateOutput' )]
+    Latitude : Single = 0.0
+
+    [OWExcludeBindings]
+    [ArduinoFlexibleVariableIfPinConnected( TimeInputPin )]
+    InitialTime : TDateTime = 0.0
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_SunPosition.h' )]
+  [ArduinoClass( 'Mitov::SunPosition' )]
+  [Category( TArduinoAstronomyToolbarCategory )]
+  [Name( 'Compute Sun Position' )]
+  [CreateName( 'SunPosition' )]
+  [ArduinoStart]
+  +TArduinoSunPosition : TArduinoBasicCelestialBodyPosition;
+//---------------------------------------------------------------------------
+; // Mitov

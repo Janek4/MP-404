@@ -1,0 +1,87 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [Name( 'Macetech' )]
+  TMacetechCategory : TClassCategory;
+//---------------------------------------------------------------------------
+  [Name( 'AVR' )]
+  [Category( TMacetechCategory )]
+  [AlternateCategory( TAVRCategory )]
+  [ParentImage( TAVRCategory )]
+  TMacetechAVRCategory : TClassCategory;
+//---------------------------------------------------------------------------
+  [Name( 'Buttons' )]
+  [CreateName( 'Buttons' )]
+  [ArduinoClass( 'Mitov::TypedInputPins2' )]
+  [ArduinoTemplateParameter( 'Effect', 'Mitov::TDefinedDigitalInputPinInverted<4>' )]
+  [ArduinoTemplateParameter( 'Brightness', 'Mitov::TDefinedDigitalInputPinInverted<3>' )]
+  [ArduinoExcludeUnconnectedAndDefault]
+  [ArduinoInit]
+  [ArduinoStart]
+  [ArduinoLoopBegin]
+  [ParentImage( TArduinoBasicButtonModule )]
+  +TMacetechRGBShadesButtonsModule : TArduinoShield
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoDigitalInputSourcePin )]
+    [ArduinoPinListGetterDirect]
+    [OWAddArduinoBoardDigitalPin( '1 (Effect)', TOWArduinoDigitalInputSourcePin, '4' )]
+    [OWAddArduinoBoardDigitalPin( '2 (Brightness)', TOWArduinoDigitalInputInterruptSourcePin, '3' )]
+    OutputPins : TOWArduinoPinList
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_NeoPixel.h' )]
+  [ArduinoInclude( 'Mitov_Macetech_RGBShades_Matrix.h' )]
+  [ArduinoClass( 'Mitov::ArduinoMacetechRGBShadesNeoPixelsModule' )]
+  [ArduinoNeoPixelsPinName( '5' )]
+  [ArduinoNeoPixelsCountPixels( 80 )]
+  [Name( 'RGB Matrix' )]
+  [ArduinoOptionalVariable( Unsigned, 6, 'FCursorX', 0 )]
+  [ArduinoOptionalVariable( Unsigned, 6, 'FCursorY', 0 )]
+  +TMacetechRGBShadesNeoPixels2DGraphicsModule : TArduinoNeoPixels2DGraphicsBasicRGBModule;
+//---------------------------------------------------------------------------
+  TArduino_AVR328_Basic_NoSPI_DigitalChannels_Board : TArduino_AVR328_Basic_Modules_Board
+
+    [Name( 'I2C Channels' )]
+    [AddItem( TArduinoI2C )]
+    I2CChannels : TArduinoI2CChannels
+
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 0,  1, TArduinoAdditionalDigitalSerial0Channel, 'Digital(RX)' )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 1,  1, TArduinoAdditionalDigitalSerial0Channel, 'Digital(TX)' )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 2,  1, TArduinoAdditionalDigitalInterruptChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 3,  1, TArduinoBasicDigitalPWMInterruptChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 4,  1, TArduinoAdditionalDigitalChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 5,  2, TArduinoBasicDigitalPWMChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 7,  2, TArduinoAdditionalDigitalChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 9,  2, TArduinoBasicDigitalPWMChannel )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 11, 1, TArduinoBasicDigitalPWMSPI0Channel, 'Digital(SPI-MOSI)' )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 12, 1, TArduinoAdditionalDigitalSPI0Channel, 'Digital(SPI-MISO)' )]
+    [ArduinoBoard_Reserve_DigitalAnalogChannels( 13, 1, TArduinoAdditionalDigitalSPI0Channel, 'Digital(LED)(SPI-SCK)' )]
+    [ArduinoBoard_Reserve_DigitalNamedAnalogChannels( 14, 0, 4, TArduinoCombinedAnalogDigitalChannel )]
+    [ArduinoBoard_Reserve_DigitalNamedAnalogChannels( 18, 4, 1, TArduinoCombinedAnalogDigitalI2C0Channel, 'Digital(I2C-SDA)' )]
+    [ArduinoBoard_Reserve_DigitalNamedAnalogChannels( 19, 5, 1, TArduinoCombinedAnalogDigitalI2C0Channel, 'Digital(I2C-SCL)' )]
+    Digital : TArduinoDigitalChannels
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'RGB Shades' )]
+  [Category( TMacetechAVRCategory )]
+  [ParentImage( TMacetechCategory )]
+  [ArduinoDefine( 'VISUINO_ARDUINO_MINI' )]
+  [ArduinoBoardCompileParams( 'arduino:avr:mini' )]
+  +TArduino_Macetech_RGB_Shades_Board : TArduino_AVR328_Basic_NoSPI_DigitalChannels_Board
+
+    [AddItem( TMacetechRGBShadesButtonsModule )]
+    [AddItem( TMacetechRGBShadesNeoPixels2DGraphicsModule )]
+    Modules
+
+    [ArduinoBoard_Add_ReservedChannels( 6, 3 )]
+    [ArduinoBoard_Add_ReservedChannels( 17, 3 )]
+    Digital
+
+    [ComponentEditorEntryDesign( 'Add S&hields ...' )]
+    Shields : TArduinoMiniShields
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

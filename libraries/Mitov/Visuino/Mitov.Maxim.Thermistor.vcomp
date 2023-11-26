@@ -1,0 +1,130 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoThermistorMAX31865Threshold' )]
+  [ParentImage( TArduinoInfraredThermometerMLX90614SetRangeMaxElement )]
+  TArduinoThermistorMAX31865Threshold : TArduinoCodePersistent
+    
+    MinOutputPin : TOWArduinoDigitalSourcePin
+    MaxOutputPin : TOWArduinoDigitalSourcePin
+
+    [ArduinoUseBindingCheckSetter( 'UpdateThreshold_Min' )]
+    [ValueRange( 0.0, 1.0 )]
+    [NamePostfix( '(Normalized)' )]
+    Min : Single = 0.0
+  
+    [ArduinoUseBindingCheckSetter( 'UpdateThreshold_Max' )]
+    [ValueRange( 0.0, 1.0 )]
+    [NamePostfix( '(Normalized)' )]
+    Max : Single = 1.0
+    
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoScopedEnum]
+  TArduinoThermistorMAX31865ProbeType : Enum
+  
+    PT100
+    PT1000
+    Custom
+  
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoThermistorMAX31865SensorCustom' )]
+  TArduinoThermistorMAX31865SensorCustom : TArduinoCodePersistent
+  
+    [NamePostfix( '(Ohms)' )]
+    ReferenceResistor : Single = 430.0 
+
+    [NamePostfix( '(Ohms)' )]
+    ZeroDegreeResisstance : Single = 100.0
+    
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoThermistorMAX31865Sensor' )]
+  [ParentImage( TArduinoBasicEnabledThermometer )]
+  TArduinoThermistorMAX31865Sensor : TArduinoCodePersistent
+  
+    Type : TArduinoThermistorMAX31865ProbeType = PT100
+    
+    Custom : TArduinoThermistorMAX31865SensorCustom
+    
+    [ValueRange( 2, 4 )]
+    [ArduinoUseBindingCheckSetter_Parent( 'UpdateSettings' )]
+    CountWires : Unsigned = 4
+    
+    [NamePostfix( '(mS)' )]
+    [DesignRange( 0, 1000 )]
+    StartingTime : Unsigned = 10
+    
+    [NamePostfix( '(mS)' )]
+    [DesignRange( 0, 1000 )]
+    MeasurementTime : Unsigned = 65
+    
+  ;
+//---------------------------------------------------------------------------
+{
+  [ParentImage( TArduinoBasicProcessorModuleOperations )]
+  TArduinoThermistorMAX31865ErrorOperations : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoThermistorMAX31865ErrorOperations )]
+  [ArduinoHelpPostfix( '(Maxim MAX31865)' )]
+  [ArduinoDeclaredClass]
+  [ArduinoOwnerTemplateTypeAndReference]
+  TArduinoThermistorMAX31865ErrorBasicOperation : TArduinoBasicNamedExludePersistent;
+}
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoThermistorMAX31865Errors' )]
+  [ArduinoOptionalVariable( Boolean, 'FManualTesting', True )]
+  *TArduinoThermistorMAX31865Errors : TArduinoCodePersistent
+  
+    [ArduinoPinCall( 'AutomaticTest_InputPin' )]
+    AutomaticTestInputPin : TOWArduinoClockSinkPin
+    
+    [ArduinoPinCall( 'ManualTest_InputPin' )]
+    [ArduinoVariableIfPinConnected( 'FManualTesting' )]
+    ManualTestInputPin : TOWArduinoDigitalSinkPin
+    
+//    FaultOutputPin : TOWArduinoDigitalSourcePin
+
+    RefferenceLowOutputPin : TOWArduinoDigitalSourcePin
+    RefferenceHighOutputPin : TOWArduinoDigitalSourcePin
+    SensorLowOutputPin : TOWArduinoDigitalSourcePin
+
+    [Name( 'Under/Over Voltage' )]
+    UnderOverVoltageOutputPin : TOWArduinoDigitalSourcePin
+    
+//    Operations : TArduinoThermistorMAX31865ErrorOperations
+    
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Maxim_Thermistor.h' )]
+  [Name( 'Maxim MAX31865 RTD PT100/PT1000 Resistance Thermometer(SPI)' )]
+  [ArduinoWebKeywords( 'MAX31865' )]
+  [ArduinoClass( 'Mitov::ThermistorMAX31865' )]
+  [ArduinoOptionalVariable( Boolean, 'FClocked', True )]
+  [ArduinoVariable( Boolean, 'FEnabled' )]
+  [ArduinoVariable( Boolean, 'FStarting' )]
+  [ArduinoVariable( Boolean, 'FMeasuring' )]
+  [ArduinoLoopBegin]
+  +TArduinoThermistorMAX31865 : TArduinoBasicMaxSPIThermometer
+
+    [ArduinoPinIsConnectedFlag]
+    [ArduinoVariableIfPinConnected( 'FClocked' )]
+	ClockInputPin
+
+    [ArduinoUseBindingCheckSetter( 'UpdateEnabled' )]
+    Enabled
+
+    [Name( 'Filter(True=50HZ/False=60Hz)' )]
+    [ArduinoUseBindingCheckSetter( 'UpdateSettings' )]
+    Filter50Hz : Boolean = False
+    
+    [ArduinoUseBindingCheckSetter( 'UpdateSettings' )]
+    SingleShot : Boolean = True
+    
+    Sensor : TArduinoThermistorMAX31865Sensor
+    Threshold : TArduinoThermistorMAX31865Threshold
+    Errors : TArduinoThermistorMAX31865Errors
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

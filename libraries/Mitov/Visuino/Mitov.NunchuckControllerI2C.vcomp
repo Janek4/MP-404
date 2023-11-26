@@ -1,0 +1,50 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Wire.h' )]
+  [ArduinoInclude( 'Mitov_Wii_Controller.h' )]
+  [ArduinoClass( 'Mitov::WiiNunchuck' )]
+  [CreateName( 'WiiNunchuck' )]
+  [Name( 'Wii Nunchuck Controller' )]
+  [ArduinoWebKeywords( 'Wii Nunchuck Controller' )]
+  [ArduinoVariable( Boolean, 'FStarted' )]
+  [ArduinoVariable( Unsigned, 6, 'FClockedCount' )]
+  [Category( TArduinoAnalogRemoteControllersToolbarCategory )]
+  [ArduinoStart]
+  [ArduinoLoopBegin]
+  +TArduinoNunchuckControllerI2C : TArduinoEnabledComponent
+
+    [OWPrimaryPin]
+    [ArduinoExclude]
+    [ArduinoI2CInstanceTemplate]
+    OutputPin : TOWArduinoI2CSourcePin
+
+    [ArduinoPinIsConnectedFlag]
+    ClockInputPin : TOWArduinoClockSinkPin
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'X', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Y', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Z', TOWArduinoAnalogSourcePin )]
+    AngleOutputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'X', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Y', TOWArduinoAnalogSourcePin )]
+    StickOutputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'C', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'Z', TOWArduinoDigitalSourcePin )]
+    ButtonOutputPins : TOWArduinoPinList
+
+    [DesignRange( $52, $52 )]
+    Address : TArduinoUInt8 = $52
+
+    ReadDelay : Unsigned = 100
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

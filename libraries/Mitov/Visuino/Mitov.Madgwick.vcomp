@@ -1,0 +1,48 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [Category( TArduinoAnalogMathFilterToolbarCategory )]
+  [ArduinoInclude( 'Mitov_MadgwickFilter.h' )]
+  [ArduinoClass( 'Mitov::MadgwickFilter' )]
+  [Name( 'Madgwick Filter' )]
+  [ArduinoStart]
+  [ArduinoLoopEnd]
+  [ArduinoVariable( Boolean, 'FChangeOnly' )]
+  [ArduinoVariable( Boolean, 'FModified' )]
+  +TArduinoMadgwick : TArduinoComponent
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'X',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Y',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Z',  TOWArduinoAnalogSinkPin )]
+    AccelerometerInputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'X',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Y',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Z',  TOWArduinoAnalogSinkPin )]
+    GyroscopeInputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'X',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Y',  TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Z',  TOWArduinoAnalogSinkPin )]
+    CompassInputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'X(Roll)', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Y(Pitch)', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Z(Yaw)', TOWArduinoAnalogSourcePin )]
+    OutputPins : TOWArduinoPinList
+
+    Units : TArduinoAngleUnits = auDegree
+
+    [ValueRange( 0.0, 1.0 )]
+    ProportionalGain : Single = 0.5
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

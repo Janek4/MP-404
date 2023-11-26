@@ -1,0 +1,31 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  TArduinoSerialComponent : TArduinoComponent
+
+    [ArduinoExclude]
+    [ArduinoSerialInstanceTemplate]
+    OutputPin : TOWArduinoExclusiveSerialSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoSerialEnableComponent : TArduinoSerialComponent
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoSharedSerialComponent : TArduinoComponent
+
+    [ArduinoExclude]
+    [ArduinoSerialInstanceTemplate]
+    OutputPin : TOWArduinoSharedSerialSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoSharedSerialEnableComponent : TArduinoSharedSerialComponent
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

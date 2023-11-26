@@ -1,0 +1,186 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoSetValueTryActiveCallChain]
+  TArduinoComplexSetValueElements : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoComplexSetValueElements )]
+  [ArduinoHelpPostfix( '(Complex Set Values)' )]
+  [ArduinoDeclaredClass]
+  [ArduinoOwnerTemplateTypeAndReference]
+  TArduinoBasicComplexSetValueElement : TArduinoBasicSetValueElement;
+//---------------------------------------------------------------------------
+  TArduinoCommonComplexSource : TArduinoComponent
+
+    [OWPrimaryPin]
+    OutputPin : TOWArduinoComplexSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonClockedComplexSource : TArduinoCommonComplexSource
+
+    ClockInputPin : TOWArduinoClockSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov.h' )]
+  [ArduinoClass( 'Mitov::ValueSource' )]
+  [CreateName( 'ComplexValue' )]
+  [Name( 'Complex Value' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [Category( TArduinoComplexDataSourcesToolbarCategory )]
+//  [ValueSourceComponent]
+  +TArduinoComplexValue : TArduinoCommonClockedComplexSource, TArduinoValue_Extender
+
+    Value : TArduinoComplex
+    Elements : TArduinoComplexSetValueElements
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonComplexSink : TArduinoComponent
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoComplexSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [CreateName( 'ComplexMultiSource' )]
+  [Name( 'Complex Multi Source' )]
+  [Category( TSynchronizationToolbarCategory )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexMultiSource : TArduinoCommonComplexSink, TArduinoMultiSource_Extender
+
+    [OWPinListPrimaryPinType( TOWArduinoComplexSourcePin )]
+    [OWAutoManagePinListOwner( TOWArduinoComplexSourcePin, 2, 2, 100 )]
+    OutputPins : TOWPinListOwner
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonComplexFilter : TArduinoCommonComplexSource
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoComplexSinkPin
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+  [CreateName( 'RepeatComplex' )]
+  [Name( 'Repeat Complex' )]
+  [Category( TSynchronizationToolbarCategory )]
+  +TArduinoRepeatComplex : TArduinoCommonComplexFilter, TArduinoRepeat_Extender;
+//---------------------------------------------------------------------------
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [Name( 'Complex Toggle Switch' )]
+  [CreateName( 'ComplexToggleSwitch' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexToggleSwitch : TArduinoCommonComplexSource, TArduinoToggleSwitch_Extender
+
+    [OWPrimaryPin]
+    TrueInputPin : TOWArduinoComplexSinkPin
+
+    [OWPrimaryPin]
+    FalseInputPin : TOWArduinoComplexSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'Complex Toggle Demux' )]
+  [CreateName( 'ComplexToggleDemux' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexToggleDemux : TArduinoCommonComplexSink, TArduinoToggleDemux_Extender
+
+    [OWPrimaryPin]
+    TrueOutputPin : TOWArduinoComplexSourcePin
+
+    [OWPrimaryPin]
+    FalseOutputPin : TOWArduinoComplexSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoTemplateParameter( 'TYPE', '::Mitov::TComplex' )]
+  [Name( 'Complex On/Off Switch' )]
+  [CreateName( 'ComplexSwitch' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  [ArduinoTemplateParameter( '0_IMPLEMENTATION_OUTPUT_VALUE', '::Mitov::CommonSwitch_Value', '0, ::Mitov::TComplex' )]
+  [ArduinoTemplateParameter( '0_IMPLEMENTATION_VALUE', '::Mitov::CommonSwitch_Value', '1, ::Mitov::TComplex' )]
+  +TArduinoComplexSwitch : TArduinoCommonComplexSource, TArduinoObjectSwitch_Extender
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoComplexSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+//  TArduinoCommonClockedEnableComplexSource : TArduinoCommonClockedComplexSource
+
+//    Enabled : Boolean = True
+
+//  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonClockedComplexEnabledSource : TArduinoCommonClockedComplexSource
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoComplexMultiInputSource : TArduinoCommonComplexSource
+
+    [OWPrimaryPin]
+    [ArduinoTemplatePinListSize]
+    [OWPinListPrimaryPinType( TOWArduinoComplexSinkPin )]
+    [OWAutoManagePinListOwner( TOWArduinoComplexSinkPin, 2, 2, 200 )]
+    InputPins : TOWPinListOwner
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [Name( 'Complex Mux(Multi channel Switch)' )]
+  [CreateName( 'ComplexMux' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexMux : TArduinoComplexMultiInputSource, TArduinoMux_Extender;
+//---------------------------------------------------------------------------
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [Name( 'Complex Demux(Multiple Output channel Switch)' )]
+  [CreateName( 'ComplexDemux' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexDemux : TArduinoCommonComplexSink, TArduinoDemux_Extender
+
+    [ArduinoTemplatePinListSize]
+    [OWPinListPrimaryPinType( TOWArduinoComplexSourcePin )]
+    [OWAutoManagePinListOwner( TOWArduinoComplexSourcePin, 2, 2, 4000 )]
+    OutputPins : TOWPinListOwner
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Math.h' )]
+  [ArduinoClass( 'Mitov::CompareValue' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [ArduinoContructorParameter( 'Mitov::TComplex()' )]
+  [Name( 'Compare Complex Value' )]
+  [CreateName( 'CompareValue' )]
+  [Category( TMeasurementToolbarCategory )]
+  [AlternateCategory( TArduinoComplexToolbarCategory )]
+  [ArduinoStart]
+  [ArduinoVariable( Boolean, 'FStarted' )]
+  +TArduinoComplexCompareValue : TArduinoCommonComplexSink
+
+    [OWPrimaryPin]
+    [ArduinoChangeOnlyPin]
+    OutputPin : TOWArduinoDigitalSourcePin
+
+    Enabled : Boolean = True
+    Value : TArduinoComplex
+
+    [ArduinoTransformImplementation( 'CompareType' )]
+    [ArduinoExclude]
+    CompareType : TArduinoCompareEqualValueType = ctEqual
+
+    OnlyChanged : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoTemplateParameter( '0_TYPE', 'Mitov::TComplex' )]
+  [CreateName( 'ComplexSnapshot' )]
+  [Name( 'Complex Snapshot' )]
+  [Category( TArduinoComplexToolbarCategory )]
+  +TArduinoComplexSnapshot : TArduinoCommonComplexFilter, TArduinoSnapshot_Extender;
+//---------------------------------------------------------------------------
+; // Mitov

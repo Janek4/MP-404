@@ -1,0 +1,163 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoSetValueTryActiveCallChain]
+  TArduinoTouchSetValueElements : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTouchSetValueElements )]
+  [ArduinoHelpPostfix( '(Touch Set Values)' )]
+  [ArduinoDeclaredClass]
+  [ArduinoOwnerTemplateTypeAndReference]
+  TArduinoBasicTouchSetValueElement : TArduinoBasicSetValueElement;
+//---------------------------------------------------------------------------
+  TArduinoTouchBasicValueElement : TArduinoBasicTouchSetValueElement
+
+    [ComponentEditorEntryDesign( 'Edit &Value Elements ...', True )]
+    ValueElements : TArduinoTouchValueElements
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::ArduinoSetValueArrayElement' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [Name( 'Set Value' )]
+  [ParentImage( TArduinoTouchValue )]
+  [ArduinoCallChainExcludeOwnerComplete]
+  +TArduinoTouchSetValueElement : TArduinoTouchBasicValueElement
+
+    [OWPinGroup( TArduinoTouchSetValueElement )]
+    InputPin : TOWArduinoClockSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_SetValueItems.h' )]
+  [ArduinoClass( 'Mitov::ArduinoStateSetArrayValueElement' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [ArduinoVariable( Boolean, 'FInputValue' )]
+  [Name( 'Set Value State' )]
+  [ArduinoValueState]
+  +TArduinoTouchStateSetValueElement : TArduinoTouchBasicValueElement
+
+    [OWPinGroup( TArduinoTouchStateSetValueElement )]
+    InputPin : TOWArduinoDigitalSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonTouchSource : TArduinoComponent
+
+    [OWPrimaryPin]
+    OutputPin : TOWArduinoTouchSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonTouchSink : TArduinoEnabledComponent
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoTouchSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonClockedTouchSource : TArduinoCommonTouchSource
+
+    ClockInputPin : TOWArduinoClockSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoDataType( 'Mitov::TArduino2DTouchPoint' )]
+  [ArduinoIsStructured]
+  TArduinoTouchValueBasicElements : TArduinoBasicValueElements;
+//---------------------------------------------------------------------------
+  [Name( 'Value' )]
+  [ArduinoDisplayParentName( 'Item' )]
+  [ArduinoDeclaredClass]
+  [ArduinoClass( 'Mitov::TArduinoBasicTouchValueElement' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameterCollectionItemIndex]
+  [ArduinoExcludeUnconnected]
+  [ParentImage( TArduinoTouchToolbarCategory )]
+  TArduinoBasicTouchValueElement : TArduinoNamedPersistentAbstract
+
+    [ArduinoUseBindingCheckSetter( 'UpdateValue' )]
+    [ValueRange( -$8000, $7FFF )]
+    [ExtendDisplayName( ' = ( ', ', ' )]
+    X : Integer = 0
+
+    [ArduinoUseBindingCheckSetter( 'UpdateValue' )]
+    [ValueRange( -$8000, $7FFF )]
+    [ExtendDisplayName( '', '' )]
+    Y : Integer = 0
+
+    [ArduinoUseBindingCheckSetter( 'UpdateValue' )]
+    [ExtendDisplayName( ' ID:', ', ' )]
+    ID : Unsigned = 0
+
+    [ArduinoUseBindingCheckSetter( 'UpdateValue' )]
+    [ExtendDisplayName( '', ' )' )]
+    Status : TTouchStatus = Down
+
+  ;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTouchValueBasicElements )]
+  [ArduinoHelpPostfix( '(Complex Value Array)' )]
+  +TArduinoTouchValueElement : TArduinoBasicTouchValueElement;
+//---------------------------------------------------------------------------
+  [ArduinoPopulatedCallChainParameter( 'Mitov::TArduino2DTouchPoint &', 'AValue' )]
+  [Name( 'GetValue' )]
+  [ArduinoCallChainIndex]
+  ArduinoTouchValueArrayGetValueCallChainAttribute : ArduinoCallChainCompleteAttribute;
+//---------------------------------------------------------------------------
+  [ArduinoPopulatedCallChainParameter( 'Mitov::TArduino2DTouchPoint *', 'AValue' )]
+  [Name( 'ApplyValues' )]
+  ArduinoTouchValueArrayApplyValueCallChainAttribute : ArduinoCallChainCompleteAttribute;
+//---------------------------------------------------------------------------
+  [ArduinoTouchValueArrayGetValueCallChain]
+  [ArduinoTouchValueArrayApplyValueCallChain]
+  TArduinoTouchValueElements : TArduinoTouchValueBasicElements;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_ArrayOperations.h' )]
+  [ArduinoClass( 'Mitov::ValueArraySource' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TArduino2DTouchPoint' )]
+  [CreateName( 'TouchValue' )]
+  [Name( 'Touch Value' )]
+  [Category( TArduinoTouchDataSourcesToolbarCategory )]
+  [ArduinoStart]
+//  [ArrayValueSourceComponent]
+  +TArduinoTouchValue : TArduinoCommonClockedTouchSource, TArduinoValue_BasicExtender
+
+    [ComponentEditorEntryDesign( 'Edit &Value Elements ...', True )]
+    ValueElements : TArduinoTouchValueElements
+
+    Elements : TArduinoTouchSetValueElements
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoBasicTouchIDData : TArduinoCommonTouchSink
+
+    XOutputPin : TOWArduinoIntegerSourcePin
+    YOutputPin : TOWArduinoIntegerSourcePin
+    PressedOutputPin : TOWArduinoDigitalSourcePin
+    
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Touch.h' )]
+  [ArduinoClass( 'Mitov::TArduinoParseTouch' )]
+  [CreateName( 'Split' )]
+  [Name( 'Parse/Split Touch' )]
+  [Category( TArduinoTouchConvertersToolbarCategory )]
+  +TArduinoParseTouch : TArduinoBasicTouchIDData, TArduinoArrayIterateItems_Extender
+  
+    IDOutputPin : TOWArduinoUnsignedSourcePin
+    
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Touch.h' )]
+  [ArduinoClass( 'Mitov::TArduinTouchIDData' )]
+  [CreateName( 'DataForID' )]
+  [Name( 'Touch Data For ID' )]
+  [Category( TArduinoTouchConvertersToolbarCategory )]
+  +TArduinoTouchIDData : TArduinoBasicTouchIDData
+  
+    [MaxValue( $FF )]
+    ID : Unsigned = 0
+    
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

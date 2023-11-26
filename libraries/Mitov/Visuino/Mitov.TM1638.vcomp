@@ -1,0 +1,267 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  TArduinoTM163X_7SegmentAnyPointsBasicElements : TArduinoBasicPixelsGroups;
+//---------------------------------------------------------------------------
+  TArduinoTM163X_7SegmentBasicElements : TArduinoTM163X_7SegmentAnyPointsBasicElements;
+//---------------------------------------------------------------------------
+  [ParentImage( TArduinoDisplay7Segments )]
+  *TArduinoTM1638_7SegmentElements : TArduinoTM163X_7SegmentBasicElements;
+//---------------------------------------------------------------------------
+  [ArduinoDeclaredClass]
+  [ArduinoInclude( 'Mitov_TM1638.h' )]
+  [ArduinoHelpPostfix( '(TM163X Segment Sections)' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoPixelsCount( 1 )]
+  TArduinoTM163X_Section7SegmentsBasicElement : TArduinoBasicPixelsGroup;
+//---------------------------------------------------------------------------
+//  [Collection( TArduinoTM1638_7SegmentElements )]
+  TArduinoTM1638_Section7SegmentsBasicElement : TArduinoTM163X_Section7SegmentsBasicElement;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM163X_7SegmentBasicElements )]
+  TArduinoTM163AnyX_Section7SegmentsBasicElement : TArduinoTM1638_Section7SegmentsBasicElement;
+//---------------------------------------------------------------------------
+  [Name( 'Section 7 Segments' )]
+  [CreateName( 'Section 7 Segments' )]
+  [ArduinoClass( 'Mitov::TM1638_Segments' )]
+  [ParentImage( TArduinoDisplay7Segments )]
+  TArduinoTM163X_AnyPoints_Section7Segments : TArduinoTM163X_Section7SegmentsBasicElement
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'a',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'b',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'c',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'd',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'e',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'f',  TOWArduinoDigitalSinkPin )]
+    [OWAddPin( 'g',  TOWArduinoDigitalSinkPin )]
+    InputPins : TOWArduinoPinList
+
+    [OWExcludeBindings]
+    InitialValue : Boolean = False
+
+  ;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM163X_7SegmentBasicElements )]
+  +TArduinoTM1638_Section7Segments : TArduinoTM163X_AnyPoints_Section7Segments
+  
+    [OWAddPin( 'dp', TOWArduinoDigitalSinkPin )]
+     InputPins
+     
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'Value Section 7 Segments' )]
+  [CreateName( 'Value Section 7 Segments' )]
+  [ArduinoClass( 'Mitov::TM1638_ValueSection7Segments' )]
+  [ArduinoStart]
+  [ParentImage( TArduinoMaximLedGroupValueSection7Segments )]
+  TArduinoTM163X_AnyPoints_ValueSection7Segments : TArduinoTM163X_Section7SegmentsBasicElement
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoUnsignedSinkPin
+
+    [OWExcludeBindings]
+    [ArduinoFlexibleVariableIfPinConnected( InputPin )]
+    InitialValue : Integer = 0
+
+  ;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM163X_7SegmentBasicElements )]
+  +TArduinoTM1638_ValueSection7Segments : TArduinoTM163X_AnyPoints_ValueSection7Segments
+
+    [OWPrimaryPin]
+    DecmalPointInputPin : TOWArduinoDigitalSinkPin
+
+    [OWExcludeBindings]
+    [ArduinoFlexibleVariableIfPinConnected( DecmalPointInputPin )]
+    InitialDecmalPointValue : Boolean = False
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoStart]
+  [ArduinoPixelsCount( CountDigits )]
+  TArduinoTM1638_Section7SegmentsBasicCountDigitsElement : TArduinoTM1638_Section7SegmentsBasicElement
+
+    [DesignRange( 1, 32 )]
+    [MinValue( 1 )]
+    [ArduinoExclude]
+    [OWExcludeBindings]
+    CountDigits : Unsigned = 8
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TM1638_IntegerDisplay7Segments' )]
+  [ParentImage( TArduinoMaximLedGroupIntegerDisplay7Segments )]
+  TArduinoTM163X_IntegerDisplay7Segments : TArduinoTM1638_Section7SegmentsBasicCountDigitsElement, TArduinoIntegerDisplay7Segments_Extender;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM1638_7SegmentElements )]
+  +TArduinoTM1638_IntegerDisplay7Segments : TArduinoTM163X_IntegerDisplay7Segments;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TM1638_AnalogDisplay7Segments' )]
+  [ArduinoStart]
+  [ParentImage( TArduinoMaximLedGroupAnalogDisplay7Segments )]
+  TArduinoTM163X_AnalogDisplay7Segments : TArduinoTM1638_Section7SegmentsBasicCountDigitsElement, TArduinoAnalogDisplay7Segments_Extender;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM1638_7SegmentElements )]
+  +TArduinoTM1638_AnalogDisplay7Segments : TArduinoTM163X_AnalogDisplay7Segments;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_TM1638_7SegmentText.h' )]
+  [ArduinoClass( 'Mitov::TM1638_TextDisplay7Segments' )]
+  [ParentImage( TArduinoMaximLedGroupTextDisplay7Segments )]
+  TArduinoTM163X_TextDisplay7Segments : TArduinoTM1638_Section7SegmentsBasicCountDigitsElement, TArduinoTextDisplay7Segments_Extender;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoTM1638_7SegmentElements )]
+  +TArduinoTM1638_TextDisplay7Segments : TArduinoTM163X_TextDisplay7Segments;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TM1638_8Keys_8Leds' )]
+  [Name( 'TM1638 7 Segment Display, 8 Keys, 8 LEDs Module (LED&KEY)' )]
+  +TArduinoTM1638_8Keys_8Leds : TArduinoTM1638_BasicDigitsModule
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S1', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S2', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S3', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S4', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S5', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S6', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S7', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( 'S8', TOWArduinoDigitalSourcePin )]
+    ButtonsOutputPins : TOWArduinoPinList
+
+    Display : TArduinoTM1638_8Keys_8Leds_Display
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoDeclaredClass]
+  [ArduinoOwnerTemplateTypeAndReference]
+//  [ArduinoVariable( TypeInfo(Boolean), 'FModified' )]
+//  [ArduinoLoopUpdateHardware]
+  TArduinoTM1638_BasicDisplay : TArduinoCodeEnabledPersistent
+
+    [ArduinoUseBindingCheckSetterAttribute( 'UpdateBrightness' )]
+    [ValueRange( 0, 1.0 )]
+    Brightness : Single  = 1.0
+
+  ;
+//---------------------------------------------------------------------------
+  *TArduinoTM1638_BasicDigitsDisplay : TArduinoTM1638_BasicDisplay
+
+    [ComponentEditorEntryDesign( 'Add Digit &Groups ...' )]
+    Digits : TArduinoTM1638_7SegmentElements
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoDeclaredClass]
+  [ArduinoClass( 'Mitov::TM1638_LED_Channel' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameterCollectionItemIndex]
+  [ArduinoInit]
+  [ArduinoHelpPostfix( '(TM1638 LEDs)' )]
+  [ParentImage( TArduinoLED )]
+  TArduinoTM1638_LEDChannel : TArduinoBasicDigitalInitialValueInputPinNamedChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED1' )]
+  +TArduinoTM1638_LEDChannel1 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED2' )]
+  +TArduinoTM1638_LEDChannel2 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED3' )]
+  +TArduinoTM1638_LEDChannel3 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED4' )]
+  +TArduinoTM1638_LEDChannel4 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED5' )]
+  +TArduinoTM1638_LEDChannel5 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED6' )]
+  +TArduinoTM1638_LEDChannel6 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED7' )]
+  +TArduinoTM1638_LEDChannel7 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [Name( 'LED8' )]
+  +TArduinoTM1638_LEDChannel8 : TArduinoTM1638_LEDChannel;
+//---------------------------------------------------------------------------
+  [ParentImage( TArduinoLED )]
+  *TArduinoTM1638_LEDChannels : TArduinoFixedPersistentCollection; 
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TM1638_8Keys_8Leds_Display' )]
+  [ArduinoStart]
+  TArduinoTM1638_8Keys_8Leds_Display : TArduinoTM1638_BasicDigitsDisplay
+
+    [AddItem( TArduinoTM1638_LEDChannel1 )]
+    [AddItem( TArduinoTM1638_LEDChannel2 )]
+    [AddItem( TArduinoTM1638_LEDChannel3 )]
+    [AddItem( TArduinoTM1638_LEDChannel4 )]
+    [AddItem( TArduinoTM1638_LEDChannel5 )]
+    [AddItem( TArduinoTM1638_LEDChannel6 )]
+    [AddItem( TArduinoTM1638_LEDChannel7 )]
+    [AddItem( TArduinoTM1638_LEDChannel8 )]
+    LEDs : TArduinoTM1638_LEDChannels
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TM1638_16Keys_Display' )]
+  [ArduinoStart]
+  [ArduinoLoopUpdateHardware]
+  [ArduinoVariable( Boolean, 'FModified' )]
+  TArduinoTM1638_16Keys_Display : TArduinoTM1638_BasicDigitsDisplay;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_TM1638.h' )]
+  [CreateName( 'DisplayKeypad' )]
+  [ArduinoWebKeywords( 'TM1638' )]
+  [Category( TArduinoDisplaysToolbarCategory )]
+  [Category( TArduinoDigitalInputOutputToolbarCategory )]
+  [ArduinoInit]
+  [ArduinoLoopBegin]
+  TArduinoTM1638_BasicDigitsModule : TArduinoComponent
+
+    ChipSelectOutputPin : TOWArduinoDigitalSourcePin
+
+    [OWPrimaryPin]
+    [ArduinoExclude]
+    [ArduinoDirectPinTemplate]
+    [OWRequiredPin]
+    ClockOutputPin : TOWArduinoDigitalOutputSourcePin
+
+    [OWPrimaryPin]
+    [ArduinoExclude]
+    [ArduinoDirectPinTemplate]
+    [OWRequiredPin]
+    DataOutputPin : TOWArduinoDigitalOutputSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduino_QYF_TM1638_16Keys' )]
+  [Name( 'QYF-TM1638 7 Segment Display, 16 Keys, Module (QIFEI)' )]
+  +TArduino_QYF_TM1638_16Keys : TArduinoTM1638_BasicDigitsModule
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '0', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '1', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '2', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '3', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '4', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '5', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '6', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '7', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '8', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '9', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '10', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '11', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '12', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '13', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '14', TOWArduinoDigitalSourcePin )]
+    [OWAddPin( '15', TOWArduinoDigitalSourcePin )]
+    [ArduinoCallChainPinList]    
+    ButtonsOutputPins : TOWArduinoChainCallPinList
+
+    Display : TArduinoTM1638_16Keys_Display
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

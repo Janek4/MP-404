@@ -1,0 +1,183 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ParentImage( TArduinoBasicProcessorModuleOperations )]
+  *TArduinoESP8266Operations : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoESP8266Operations )]
+  [ArduinoHelpPostfix( '(ESP8266 WiFi Module Operations)' )]
+  [ArduinoDeclaredClass]
+  [ArduinoOwnerTemplateTypeAndReference]
+  TArduinoESP8266Operation : TArduinoCodeEnabledPersistent;
+//---------------------------------------------------------------------------
+  [Name( 'Scan WiFi Networks' )]
+  [CreateName( 'ScanNetworks' )]
+  [ArduinoClass( 'Mitov::ESP8266ScanNetworksOperation' )]
+  [ArduinoInit]
+  [ArduinoVariable( Boolean, 'FEmptyLineDetected' )]
+  [ArduinoVariable( Boolean, 'FScanRequest' )]
+  [ArduinoVariable( Unsigned, 6, 'FCount' )]
+  [ParentImage( TArduinoESP32WiFiModuleScanNetworksOperation )]
+  [CollectionItemAssociation( TArduinoESP32WiFiModuleScanNetworksOperation )]
+  +TArduinoESP8266ScanNetworksOperation : TArduinoESP8266Operation
+
+    [ArduinoPinDisconnectedAddCodeEntry( ceStart )]
+    ScanInputPin : TOWArduinoClockSinkPin
+
+    ScanningOutputPin : TOWArduinoDigitalSourcePin
+    FailedOutputPin : TOWArduinoClockSourcePin
+    CountOutputPin : TOWArduinoUnsignedSourcePin
+    SignalStrengthOutputPin : TOWArduinoIntegerSourcePin
+    SSIDOutputPin : TOWArduinoStringSourcePin
+
+    [Name( 'MAC Address (BSSID)' )]
+    MACAddressOutputPin : TOWArduinoStringSourcePin
+
+    EncryptionOutputPin : TOWArduinoUnsignedSourcePin
+    ChannelOutputPin : TOWArduinoIntegerSourcePin
+    FoundNetworkOutputPin : TOWArduinoClockSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'TryConnect' )]
+  [ArduinoCallChainIndex]
+  TArduinoESP8266ModuleWiFiAccessPointElementTryConnectCallChainAttribute : ArduinoCallChainCompleteAttribute;
+//---------------------------------------------------------------------------
+  [TArduinoESP8266ModuleWiFiAccessPointElementTryConnectCallChain]
+  [ParentImage( TArduinoESP32WiFiModuleRemoteAccessPoints )]
+  *TArduinoESP8266RemoteAccessPoints : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoESP8266RemoteAccessPoints )]
+  [ArduinoHelpPostfix( '(ESP8266 WiFi)' )]
+  [Name( 'WiFi Access Point' )]
+  [CreateName( 'Access Point' )]
+  [ArduinoDeclaredClass]
+  [ArduinoTemplateParameterCollectionItemIndex]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoClass( 'Mitov::ESP8266RemoteAccessPoint' )]
+  [ParentImage( TArduinoESP32WiFiModuleRemoteAccessPoint )]
+  +TArduinoESP8266RemoteAccessPoint : TArduinoBasicNamedExludePersistent
+
+    Enabled : Boolean = True
+    SSID : String = ''
+    Password : String = ''
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoESP8266Sockets : TArduinoPersistentCollection;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoESP8266Sockets )]
+  [ArduinoHelpPostfix( '(ESP8266 Socket)' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoStart]
+  [ArduinoVariable( Boolean, 'FRunning' )]
+  [ArduinoVariable( Boolean, 'FConnecting' )]
+  [ArduinoVariable( Boolean, 'FIsConnected' )]
+  TArduinoESP8266BasicSocket : TArduinoBasicConnectNotifySocket
+//  published // OpenWire support
+//    [ArduinoPinConnectDefine( '_MITOV_ESP8266_SOCKET_CONNECTED_PIN_' )]
+//    ConnectedOutputPin;
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'TCP/IP Client' )]
+  [CreateName( 'TCP Client' )]
+  [ArduinoClass( 'Mitov::ESP8266TCPClientSocket' )]
+  [ParentImage( TArduinoBasicTCPClientSocket )]
+  [ArduinoSocketDirectControlInterface( IOWArduinoTCPClientSocketStream )]
+  +TArduinoESP8266TCPClientSocket : TArduinoESP8266BasicSocket
+
+    [OWPinGroup( TArduinoBasicOutputSocket )]
+    [ArduinoPinPair( TArduinoBasicOutputSocket )]
+    InputPin : TOWArduinoTCPClientSocketMultiSinkPin
+
+    [OldName( 'URL' )]
+    Host : String = ''
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'TCP/IP Server' )]
+  [CreateName( 'TCP Server' )]
+  [ArduinoClass( 'Mitov::ESP8266TCPServerSocket' )]
+  [ParentImage( TArduinoBasicTCPServerSocket )]
+  [ArduinoSocketDirectControlInterface( IOWArduinoTCPServerSocketStream )]
+  +TArduinoESP8266TCPServerSocket : TArduinoESP8266BasicSocket
+
+    [OWPinGroup( TArduinoBasicOutputSocket )]
+    [ArduinoPinPair( TArduinoBasicOutputSocket )]
+    InputPin : TOWArduinoTCPServerSocketMultiSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::ESP8266Encription' )]
+  TArduinoESP8266Encryption : TArduinoCodePersistent
+
+    WPA : Boolean = False
+    WPA2 : Boolean = False
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::ESP8266AccessPoint' )]
+  [ParentImage( TArduinoESP32WiFiModuleAccessPoint )]
+  *TArduinoESP8266AccessPoint : TArduinoCodeEnabledPersistent
+  
+    SSID : String = ''
+    Password : String = ''
+
+    [DesignRange( 1, 14 )]
+    Channel : Unsigned = 1
+
+    [OldName( 'Encription' )]
+    Encryption : TArduinoESP8266Encryption
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_ESP8266.h' )]
+  [ArduinoClass( 'Mitov::ESP8266' )]
+  [CreateName( 'ESP8266' )]
+  [Name( 'ESP8266 WiFi' )]
+  [ArduinoStart]
+  [ArduinoLoopBegin]
+  [ArduinoVariable( Boolean, 'FEmptyLineDetected' )]
+  [ArduinoVariable( Boolean, 'FInSocketReceiving' )]
+  [ArduinoVariable( Boolean, 'FInSocketProcessing' )]
+  [ArduinoVariable( Boolean, 'FIsStarted' )]
+  [ArduinoVariable( Unsigned, 2, 'FReadConnectionId' )]
+  TArduinoESP8266_Serial_Extender : Extender
+
+    ResetInputPin : TOWArduinoClockSinkPin
+
+    AccessPointAddressOutputPin : TOWArduinoStringSourcePin
+    AccessPointMACOutputPin : TOWArduinoStringSourcePin
+    StationAddressOutputPin : TOWArduinoStringSourcePin
+    StationMACOutputPin : TOWArduinoStringSourcePin
+
+    SendReset : Boolean = True
+
+    AccessPoint : TArduinoESP8266AccessPoint
+
+    [ComponentEditorEntryDesign( 'Add Access Points ...' )]
+    [ArduinoExcludeCollectionItems]
+    [ArduinoTemplateParameterCollectionCount]
+    RemoteAccessPoints : TArduinoESP8266RemoteAccessPoints
+
+    [ArduinoExcludeCollectionItems]
+    [ComponentEditorEntryDesign( 'Add Sockets ...' )]
+    Sockets : TArduinoESP8266Sockets
+
+    [ArduinoExcludeCollectionItems]
+    [ComponentEditorEntryDesign( 'Add Operations ...' )]
+    Operations : TArduinoESP8266Operations
+
+  ;
+//---------------------------------------------------------------------------
+  [Category( TCommunicationToolbarCategory )]
+  [ArduinoWebKeywords( 'ESP8266' )]
+  [ArduinoTemplateParameter( '2_RESET', 'Mitov::ESP8266ResetCommand' )]
+  +TArduinoESP8266 : TArduinoSharedSerialComponent, TArduinoESP8266_Serial_Extender;
+//---------------------------------------------------------------------------
+  [ArduinoDeclaredClass]
+  [ParentImage( TArduinoESP32WiFiModuleRemoteAccessPoint )]
+  [ArduinoExcludeUnconnectedAndDefault]
+  TArduinoESP8266_BasicProperty : TArduinoCodePersistent, TArduinoESP8266_Serial_Extender;
+//---------------------------------------------------------------------------
+; // Mitov

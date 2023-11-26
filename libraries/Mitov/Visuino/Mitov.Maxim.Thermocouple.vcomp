@@ -1,0 +1,52 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Maxim_Thermocouple.h' )]
+  [CreateName( 'Thermometer' )]
+  [Category( TArduinoAnalogMeasurementToolbarCategory )]
+  [ArduinoStart]
+  TArduinoBasicMaxSPIThermometer : TArduinoCommonClockedAnalogEnableSource
+
+    [ArduinoChangeOnlyPin]
+    OutputPin
+
+    [OWPrimaryPin]
+//    [ArduinoExclude]
+    ControlOutputPin : TOWArduinoSPISourcePin
+
+    [ArduinoComponentDependancyPin]
+    ChipSelectOutputPin : TOWArduinoDigitalSourcePin
+
+    SPISpeed : Unsigned = 4000000
+
+    InFahrenheit : Boolean = False
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoBasicMaxSPIThermocouple : TArduinoBasicMaxSPIThermometer
+
+    [ArduinoPinDisconnectedAddCodeEntry( ceLoopBegin )]
+    ClockInputPin
+
+    NotConnectedOutputPin : TOWArduinoDigitalSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'Maxim SPI K-Thermocouple Thermometer MAX6675' )]
+  [ArduinoWebKeywords( 'MAX6675' )]
+  [ArduinoClass( 'Mitov::ThermocoupleMAX6675' )]
+  +TArduinoThermocoupleMAX6675 : TArduinoBasicMaxSPIThermocouple;
+//---------------------------------------------------------------------------
+  [Name( 'Maxim SPI Cold-Junction Compensated Thermocouple Thermometer MAX31855' )]
+  [ArduinoWebKeywords( 'MAX31855' )]
+  [ArduinoClass( 'Mitov::ThermocoupleMAX31855' )]
+  +TArduinoThermocoupleMAX31855 : TArduinoBasicMaxSPIThermocouple
+
+    [OWPrimaryPin]
+    ColdJunctionOutputPin : TOWArduinoAnalogSourcePin
+
+    ShortToPowerOutputPin : TOWArduinoDigitalSourcePin
+    ShortToGroundOutputPin : TOWArduinoDigitalSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

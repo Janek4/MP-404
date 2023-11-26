@@ -1,0 +1,52 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Accelerometer.h' )]
+  [ArduinoClass( 'Mitov::Memsic2125Accelerometer' )]
+  [CreateName( 'Accelerometer' )]
+  [Name( 'Memsic 2125 Accelerometer' )]
+  [ArduinoWebKeywords( 'Memsic 2125' )]
+  [Category( TArduinoAnalogMeasurementToolbarCategory )]
+  [ArduinoVariable( Boolean, 'FOldValueX' )]
+  [ArduinoVariable( Boolean, 'FOldValueY' )]
+  +TArduinoAccelerometer : TArduinoEnabledComponent
+
+    [OWPrimaryPin]
+    XInputPin : TOWArduinoDigitalSinkPin
+
+    [OWPrimaryPin]
+    YInputPin : TOWArduinoDigitalSinkPin
+
+    [OWPrimaryPin]
+    XOutputPin : TOWArduinoAnalogSourcePin
+
+    [OWPrimaryPin]
+    YOutputPin : TOWArduinoAnalogSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Accelerometer.h' )]
+  [ArduinoClass( 'Mitov::AccelerometerADXL335' )]
+  [CreateName( 'Accelerometer' )]
+  [Name( 'Analog Devices GY-61/ADXL335 Accelerometer' )]
+  [ArduinoWebKeywords( 'ADXL335' )]
+  [ArduinoWebKeywords( 'GY-61' )]
+  [Category( TArduinoAnalogMeasurementToolbarCategory )]
+  +TArduinoAccelerometerADXL335 : TArduinoEnabledComponent
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'X', TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Y', TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Z', TOWArduinoAnalogSinkPin )]
+    AnalogInputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'X(G)', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Y(G)', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Z(G)', TOWArduinoAnalogSourcePin )]
+    AccelerationOutputPins : TOWArduinoPinList
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

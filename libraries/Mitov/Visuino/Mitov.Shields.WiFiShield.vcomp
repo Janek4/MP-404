@@ -1,0 +1,117 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  TArduinoWiFiSockets : TArduinoBasicSockets;
+//---------------------------------------------------------------------------
+  [Name( 'WPA WiFi Access Point' )]
+  [CreateName( 'WPA Access Point' )]
+  [ArduinoClass( 'Mitov::WiFiRemoteAccessPointWPA' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  +TArduinoRemoteWiFiAccessPointWPA : TArduinoRemoteWiFiAccessPoint
+
+    Password : String = ''
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'WEP WiFi Access Point' )]
+  [CreateName( 'WEP Access Point' )]
+  [ArduinoClass( 'Mitov::WiFiRemoteAccessPointWEP' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  +TArduinoRemoteWiFiAccessPointWEP : TArduinoRemoteWiFiAccessPoint
+
+    Key : String = ''
+
+    [ValueRange( 0, 3 )]
+    KeyIndex : Integer = 0
+
+  ;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoRemoteWiFiAccessPoints )]
+  [ArduinoHelpPostfix( '(WiFi Shield)' )]
+  [Name( 'Open WiFi Access Point' )]
+  [CreateName( 'Open Access Point' )]
+  [ArduinoClass( 'Mitov::WiFiRemoteAccessPoint' )]
+  [ParentImage( TArduinoESP32WiFiModuleRemoteAccessPoint )]
+  [ArduinoDeclaredClass]
+  [CollectionItemAssociation( TArduinoRemoteWiFiAccessPoints )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  +TArduinoRemoteWiFiAccessPoint : TArduinoBasicRemoteWiFiAccessPoint;
+//---------------------------------------------------------------------------
+  TArduinoWiFiSecureSockets : TArduinoWiFiSockets;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoWiFiSockets )]
+  [ArduinoInclude( 'Ethernet.h', 'Ethernet', 'https://github.com/arduino-libraries/Ethernet' )]
+  [ArduinoInclude( 'SPI.h' )]
+  [ArduinoHelpPostfix( '(WiFi Socket)' )]
+  [ArduinoClass( 'Mitov::TCPClientSocket' )] //<Mitov::BasicEthernetShield,WiFiClient>' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameter( '0_IMPLEMENTATION', 'Mitov::BasicTCPClientSocket_Implementation' )]
+  [ArduinoTemplateParameter( '0_IMPLEMENTATION.0_CLIENT', 'WiFiClient' )]
+  +TArduinoWiFiShieldTCPClientSocket : TArduinoBasicTCPClientSocket;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoWiFiSockets )]
+  [ArduinoInclude( 'Ethernet.h', 'Ethernet', 'https://github.com/arduino-libraries/Ethernet' )]
+  [ArduinoInclude( 'SPI.h' )]
+  [ArduinoHelpPostfix( '(WiFi Socket)' )]
+  [ArduinoClass( 'Mitov::TCPServerSocket' )] //<Mitov::BasicEthernetShield,WiFiServer,WiFiClient>' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameter( 'SERVER', 'Mitov::AvailableAcceptWrapper<WiFiServer, WiFiClient>' )]
+  [ArduinoTemplateParameter( 'CLIENT', 'WiFiClient' )]
+  +TArduinoWiFiShieldTCPServerSocket : TArduinoBasicTCPServerSocket;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoWiFiSockets )]
+  [ArduinoInclude( 'WiFiUDP.h' )]
+  [ArduinoInclude( 'Ethernet.h', 'Ethernet', 'https://github.com/arduino-libraries/Ethernet' )]
+  [ArduinoInclude( 'SPI.h' )]
+  [ArduinoHelpPostfix( '(WiFi Socket)' )]
+  [ArduinoClass( 'Mitov::UDPSocket' )] //<Mitov::BasicEthernetShield,WiFiUDP>' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameter( 'CLIENT', 'WiFiUDP' )]
+  +TArduinoWiFiShieldUDPSocket : TArduinoBasicUDPSocket;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoWiFiSecureSockets )]
+  [ArduinoInclude( 'WiFiClientSecure.h' )]
+  [ArduinoHelpPostfix( '(WiFi Socket)' )]
+  [ArduinoClass( 'Mitov::TCPSecureClientSocket' )] //<Mitov::BasicEthernetShield,WiFiClientSecure>' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameter( 'CLIENT', 'WiFiClientSecure' )]
+  +TArduinoWiFiTCPSecureClientSocket : TArduinoBasicTCPSecureClientSocket;
+//---------------------------------------------------------------------------
+  [Name( 'WiFi Shield' )]
+  [CreateName( 'WiFiShield' )]
+  [ArduinoInclude( 'SPI.h' )]
+  [ArduinoInclude( 'WiFi.h', 'WiFi', 'https://github.com/arduino-libraries/WiFi' )]
+  [ArduinoInclude( 'WiFiUdp.h' )]
+  [ArduinoInclude( 'Mitov_WiFiShield.h' )]
+  [ArduinoClass( 'Mitov::WiFiShield' )]
+  [SingleCollectionInstance]
+  [ArduinoWebKeywords( 'Arduino WiFi Shield' )]
+  [Collection( TArduinoBasicShields )]
+  [ParentImage( TArduinoESP32WiFiModuleRemoteAccessPoint )]
+  [Category( TCommunicationToolbarCategory )]
+  [ArduinoInit]
+  [ArduinoVariable( Boolean, 'IsStarted' )]
+  [ArduinoShieldPin( '10' )]
+  [ArduinoShieldPin( '4' )]
+  [ArduinoSPI( 0 )]
+  [ArduinoExcludeUnconnectedAndDefault]
+  [CollectionItemAssociation( TArduinoESP32BasicWiFiModule )]
+  +TArduinoWiFiShield : TArduinoBasicNetworkShield
+
+    ScanNetworksInputPin : TOWArduinoClockSinkPin
+    FoundSignalStrengthOutputPin : TOWArduinoIntegerSourcePin
+    FoundSSIDOutputPin : TOWArduinoStringSourcePin
+    AddressOutputPin : TOWArduinoStringSourcePin
+    MACOutputPin : TOWArduinoStringSourcePin
+    SignalStrengthOutputPin : TOWArduinoIntegerSourcePin
+    BSSIDOutputPin : TOWArduinoStringSourcePin
+    GatewayIPOutputPin : TOWArduinoStringSourcePin
+    SubnetMaskIPOutputPin : TOWArduinoStringSourcePin
+    CheckSignalStrengthInputPin  : TOWArduinoClockSinkPin
+    
+    IPAddress : TArduinoIPV4DNS2Address
+    AccessPoints : TArduinoRemoteWiFiAccessPoints
+    Sockets : TArduinoWiFiSockets
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

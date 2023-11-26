@@ -1,0 +1,16 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [Name( 'Shenzhen Yongfukang Technology I2S Mono Audio Amplifier (Speaker) - NS4168' )]
+  [ArduinoWebKeywords( 'Shenzhen Yongfukang Technology NS4168' )]
+  [CreateName( 'Speaker' )]
+  [Category( TArduinoAudioOutputToolbarCategory )]
+  [ArduinoInclude( 'Mitov_I2S_Amplifier_NS4168.h' )]
+  [ArduinoClass( 'Mitov::TArduinoI2SAmplifierNS4168' )]
+  [ArduinoTemplateParameter( 'MAX_SPEED', '96000' )]
+  +TArduinoI2SAmplifierNS4168 : TArduinoBasicI2SAmplifier
+  
+    RightChannel : Boolean = False
+    
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

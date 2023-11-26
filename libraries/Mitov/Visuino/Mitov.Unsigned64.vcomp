@@ -1,0 +1,66 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoPopulatedCallChainParameter( 'uint64_t &', 'AValue' )]
+  [Name( 'GetValue' )]
+  [ArduinoCallChainIndex]
+  ArduinoUnsigned64ValueArrayGetValueCallChainAttribute : ArduinoCallChainCompleteAttribute;
+//---------------------------------------------------------------------------
+  [ArduinoPopulatedCallChainParameter( 'uint64_t *', 'AValue' )]
+  [Name( 'ApplyValues' )]
+  ArduinoUnsigned64ValueArrayApplyValueCallChainAttribute : ArduinoCallChainCompleteAttribute;
+//---------------------------------------------------------------------------
+  [ArduinoDataType( 'uint64_t' )]
+  TArduinoUnsigned64ValueBasicElements : TArduinoBasicValueElements;
+//---------------------------------------------------------------------------
+  TArduinoUnsigned64ValueNoBindingElements : TArduinoUnsigned64ValueBasicElements;
+//---------------------------------------------------------------------------
+  [ArduinoUnsigned64ValueArrayGetValueCallChain]
+  [ArduinoUnsigned64ValueArrayApplyValueCallChain]
+  TArduinoUnsigned64ValueElements : TArduinoUnsigned64ValueBasicElements;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoUnsigned64ValueBasicElements )]
+  [ArduinoHelpPostfix( '(Unsigned Value Array)' )]
+  [ArduinoDisplayParentName( 'Item' )]
+  [Name( 'Value' )]
+  [ParentImage( TArduinoMakeJSONUnsigned64Element )]
+  [ArduinoDeclaredClass]
+  [ArduinoClass( 'Mitov::TArduinoTypedValueElement' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoTemplateParameterCollectionItemIndex]
+  [ArduinoTemplateParameter( 'TYPE', 'uint64_t' )]
+  [ArduinoExcludeUnconnected]
+  +TArduinoUnsigned64ValueElement : TArduinoNamedPersistentAbstract
+
+    [ArduinoUseBindingCheckSetter( 'UpdateValue' )]
+    [ExtendDisplayName( '=', '' )]
+    Value : UInt64 = 0
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonUnsigned64Sink : TArduinoComponent
+
+    [OWPrimaryPin]
+    InputPin : TOWArduinoUInt64SinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonUnsigned64EnableSink : TArduinoCommonUnsigned64Sink
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonUnsigned64Source : TArduinoComponent
+
+    [OWPrimaryPin]
+    OutputPin : TOWArduinoUInt64SourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoCommonUnsigned64EnableSource : TArduinoCommonUnsigned64Source
+
+    Enabled : Boolean = True
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

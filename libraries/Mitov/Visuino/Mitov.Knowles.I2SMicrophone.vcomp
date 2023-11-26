@@ -1,0 +1,13 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [Name( 'Knowles I2S Mono Audio Microphone - SPH0645LM4H' )]
+  [ArduinoWebKeywords( 'Knowles Microphone SPH0645LM4H' )]
+  [ArduinoInclude( 'Mitov_Knowles_I2S_Microphone_SPH0645LM4H.h' )]
+  [ArduinoClass( 'Mitov::TArduinoI2SMicrophoneSPH0645LM4H' )]
+  +TArduinoI2SMicrophoneSPH0645LM4H : TArduinoBasicI2SMicrophone
+  
+    RightChannel : Boolean = False
+  
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

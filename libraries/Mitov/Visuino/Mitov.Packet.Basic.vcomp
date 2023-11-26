@@ -1,0 +1,577 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoDeclaredClass]
+  TArduinoBasicMarkerBinaryPacketUnpacketElement : TArduinoBasicMakeSplitStructureElement
+
+    Bytes : TArduinoBinaryPersistent
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketMarkerBinaryElement' )]
+  [CreateName( 'Marker' )]
+  [Name( 'Marker' )]
+  [ArduinoHelpPostfix( '(Packet)' )]
+  [ArduinoOwnerTemplateTypeAndReference]
+  [ArduinoDeclaredClass]
+  [ArduinoCallChain( 'ProcessData' )]
+  [ArduinoCallChainIndex]
+  [ArduinoCallChainParameter( 'AIndex' )]
+  [ArduinoCallChainParameter( 'AOperation' )]
+  [ArduinoOpenWireStudioMatch( TCLMarkerBinaryUnpacketElement )]
+  [Collection( TArduinoPacketElements )]
+  [CollectionItemAssociation( TCLMarkerBinaryUnpacketElement )]
+  +TArduinoMarkerBinaryPacketElement : TArduinoBasicMarkerBinaryPacketUnpacketElement;
+//---------------------------------------------------------------------------
+  TArduinoIntegerBasicBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoIntegerBasicBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoIntegerSinkPin
+
+    Visualization : TArduinoIntegerVisualization
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int32_t' )]
+  [CreateName( 'Integer' )]
+  [Name( 'Integer' )]
+  [ParentImage( TArduinoMemoryIntegerElement )]
+  [ArduinoOpenWireStudioMatch( TSLIntegerSplitStructureElement )]
+  [CollectionItemAssociation( TSLIntegerMakeStructureElement )]
+  +TArduinoIntegerBinaryPacketElement : TArduinoIntegerBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int16_t' )]
+  [CreateName( 'Integer 16bit' )]
+  [Name( 'Integer 16bit' )]
+  [ParentImage( TArduinoMemoryInteger16Element )]
+  [ArduinoOpenWireStudioMatch( TSLInt16SplitStructureElement )]
+  [CollectionItemAssociation( TSLInt16MakeStructureElement )]
+  +TArduinoInteger16BinaryPacketElement : TArduinoIntegerBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int8_t' )]
+  [CreateName( 'Integer 8bit' )]
+  [Name( 'Integer 8bit' )]
+  [ParentImage( TArduinoMemoryInteger8Element )]
+  [ArduinoOpenWireStudioMatch( TSLInt8SplitStructureElement )]
+  [CollectionItemAssociation( TSLInt8MakeStructureElement )]
+  +TArduinoInteger8BinaryPacketElement : TArduinoIntegerBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  TArduinoUnsignedBasicBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoUnsignedBasicBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoUnsignedSinkPin
+
+    Visualization : TArduinoUnsignedVisualization
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint32_t' )]
+  [CreateName( 'Unsigned' )]
+  [Name( 'Unsigned' )]
+  [ParentImage( TArduinoMemoryUnsignedElement )]
+  [ArduinoOpenWireStudioMatch( TSLUnsignedSplitStructureElement )]
+  [CollectionItemAssociation( TSLUnsignedMakeStructureElement )]
+  +TArduinoUnsignedBinaryPacketElement : TArduinoUnsignedBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint16_t' )]
+  [CreateName( 'Unsigned 16bit' )]
+  [Name( 'Unsigned 16bit' )]
+  [ParentImage( TArduinoMemoryUnsigned16Element )]
+  [ArduinoOpenWireStudioMatch( TSLUInt16SplitStructureElement )]
+  [CollectionItemAssociation( TSLUInt16MakeStructureElement )]
+  +TArduinoUnsigned16BinaryPacketElement : TArduinoUnsignedBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint8_t' )]
+  [CreateName( 'Unsigned 8bit' )]
+  [Name( 'Unsigned 8bit' )]
+  [ParentImage( TArduinoMemoryUnsigned8Element )]
+  [ArduinoOpenWireStudioMatch( TSLUInt8SplitStructureElement )]
+  [CollectionItemAssociation( TSLUInt8MakeStructureElement )]
+  +TArduinoUnsigned8BinaryPacketElement : TArduinoUnsignedBasicBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+//  [ArduinoTemplateParameter( 'float,float' )]
+  [ArduinoTemplateParameter( 'PIN', 'float' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [CreateName( 'Analog' )]
+  [Name( 'Analog' )]
+  [ArduinoOpenWireStudioMatch( TSLFloatSplitStructureElement )]
+  [CollectionItemAssociation( TSLFloatMakeStructureElement )]
+  [ParentImage( TArduinoMemoryAnalogElement )]
+  +TArduinoAnalogBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoAnalogBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoAnalogSinkPin
+
+    Visualization : TArduinoAnalogVisualization
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TComplex' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [CreateName( 'Complex' )]
+  [Name( 'Complex' )]
+  [ArduinoOpenWireStudioMatch( TSLComplexFloatSplitStructureElement )]
+  [CollectionItemAssociation( TSLComplexFloatMakeStructureElement )]
+  [ParentImage( TArduinoMemoryComplexElement )]
+  +TArduinoComplexBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoComplexBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoComplexSinkPin
+
+    Visualization : TArduinoComplexVisualization
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TQuaternion' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TQuaternion' )]
+  [CreateName( 'Quaternion' )]
+  [Name( 'Quaternion' )]
+  [ArduinoOpenWireStudioMatch( TSLQuaternionFloatSplitStructureElement )]
+  [CollectionItemAssociation( TSLQuaternionFloatMakeStructureElement )]
+  [ParentImage( TArduinoMemoryQuaternionElement )]
+  +TArduinoQuaternionBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoQuaternionBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoQuaternionSinkPin
+
+    Visualization : TArduinoQuaternionVisualization
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketDigitalBinaryElement' )]
+  [CreateName( 'Digital' )]
+  [Name( 'Digital' )]
+  [ParentImage( TArduinoMemoryDigitalElement )]
+  [ArduinoOpenWireStudioMatch( TSLBooleanSplitStructureElement )]
+  [CollectionItemAssociation( TSLBooleanMakeStructureElement )]
+  [ArduinoVariable( Boolean, 'FBoolValue' )]
+  +TArduinoDigitalBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoDigitalBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoDigitalSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketClockBinaryElement' )]
+  [CreateName( 'Clock Event' )]
+  [Name( 'Clock Event' )]
+  [ParentImage( TArduinoClockMakeStructureElement )]
+  [ArduinoOpenWireStudioMatch( TSLClockSplitStructureElement )]
+  [CollectionItemAssociation( TSLClockMakeStructureElement )]
+  +TArduinoClockBinaryPacketElement : TArduinoBasicSimplePacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoClockBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoClockSinkPin
+    
+    [MinValue( 1 )]
+    [ArduinoAddPowerVariable( 'FCount' )]
+    [OWExcludeBindings]
+    BufferSize : Unsigned = 255
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedPacketSinkElement' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TDateTime' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TDateTime' )]
+  [CreateName( 'Date/Time' )]
+  [Name( 'Date/Time' )]
+  [ArduinoOpenWireStudioMatch( TSLDateTimeSplitStructureElement )]
+  [CollectionItemAssociation( TSLDateTimeMakeStructureElement )]
+  [ParentImage( TSLDateTimeSplitStructureElement )]
+  +TArduinoDateTimeBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoDateTimeBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoDateTimeSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketTextBinaryElement' )]
+  [CreateName( 'Text' )]
+  [Name( 'Text' )]
+  [ParentImage( TArduinoTextValueElement )]
+  [ArduinoOpenWireStudioMatch( TSLStringSplitStructureElement )]
+  [CollectionItemAssociation( TSLStringMakeStructureElement )]
+  +TArduinoTextBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoTextBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoStringSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketArrayBinaryElement' )]
+  [CreateName( 'Analog Array' )]
+  [Name( 'Analog Array' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [ArduinoOpenWireStudioMatch( TSLFloatBufferSplitStructureElement )]
+  [CollectionItemAssociation( TSLFloatBufferMakeStructureElement )]
+  [ParentImage( TArduinoAnalogArrayMakeStructureElement )]
+  +TArduinoAnalogArrayBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoAnalogArrayBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoAnalogArraySinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketArrayBinaryElement' )]
+  [CreateName( 'Binary Block' )]
+  [Name( 'Binary Block' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint8_t' )]
+  [ArduinoOpenWireStudioMatch( TSLBlockBufferSplitStructureElement )]
+  [CollectionItemAssociation( TSLBlockBufferMakeStructureElement )]
+  [ParentImage( TArduinoBinaryBlockMakeStructureElement )]
+  +TArduinoBinaryBlockBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoBinaryBlockBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoByteSinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketArrayBinaryElement' )]
+  [CreateName( 'Complex Array' )]
+  [Name( 'Complex Array' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [ArduinoOpenWireStudioMatch( TSLComplexFloatBufferSplitStructureElement )]
+  [CollectionItemAssociation( TSLComplexFloatBufferMakeStructureElement )]
+  [ParentImage( TArduinoComplexArrayMakeStructureElement )]
+  +TArduinoComplexArrayBinaryPacketElement : TArduinoBasicPacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoComplexArrayBinaryPacketElement )]
+    [ArduinoVariableIfPinConnected( 'FPopulated' )]
+    InputPin : TOWArduinoComplexArraySinkPin
+
+  ;
+//---------------------------------------------------------------------------
+  [Collection( TArduinoUnpacketElements )]
+  [ArduinoHelpPostfix( '(Unpacket)' )]
+  [ArduinoDeclaredClass]
+  TArduinoBasicUnpacketElement : TArduinoBasicMakeSplitStructureElement;
+//---------------------------------------------------------------------------
+  TArduinoBasicIntegerBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoBasicIntegerBinaryUnpacketElement )]
+    OutputPin : TOWArduinoIntegerSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  TArduinoBasicUnsignedBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoBasicUnsignedBinaryUnpacketElement )]
+    OutputPin : TOWArduinoUnsignedSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketMarkerBinaryElement' )]
+  [CreateName( 'Marker' )]
+  [Name( 'Marker' )]
+  [ArduinoHelpPostfix( '(Unpacket)' )]
+  [ArduinoOpenWireStudioMatch( TCLMarkerBinaryPacketElement )]
+  [Collection( TArduinoUnpacketElements )]
+  [ParentImage( TArduinoMarkerBinaryPacketElement )]
+  [CollectionItemAssociation( TCLMarkerBinaryUnpacketElement )]
+  +TArduinoMarkerBinaryUnpacketElement : TArduinoBasicMarkerBinaryPacketUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Integer' )]
+  [Name( 'Integer' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int32_t' )]
+  [ArduinoOpenWireStudioMatch( TSLIntegerMakeStructureElement )]
+  [ParentImage( TArduinoIntegerBinaryPacketElement )]
+  [CollectionItemAssociation( TSLIntegerMakeStructureElement )]
+  +TArduinoIntegerBinaryUnpacketElement : TArduinoBasicIntegerBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Unsigned' )]
+  [Name( 'Unsigned' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint32_t' )]
+  [ArduinoOpenWireStudioMatch( TSLUnsignedMakeStructureElement )]
+  [ParentImage( TArduinoUnsignedBinaryPacketElement )]
+  [CollectionItemAssociation( TSLUnsignedMakeStructureElement )]
+  +TArduinoUnsignedBinaryUnpacketElement : TArduinoBasicUnsignedBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Integer 16bit' )]
+  [Name( 'Integer 16bit' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int16_t' )]
+  [ArduinoOpenWireStudioMatch( TSLInt16MakeStructureElement )]
+  [ParentImage( TArduinoInteger16BinaryPacketElement )]
+  [CollectionItemAssociation( TSLInt16MakeStructureElement )]
+  +TArduinoInteger16BinaryUnpacketElement : TArduinoBasicIntegerBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Unsigned 16bit' )]
+  [Name( 'Unsigned 16bit' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint16_t' )]
+  [ArduinoOpenWireStudioMatch( TSLUInt16MakeStructureElement )]
+  [ParentImage( TArduinoUnsigned16BinaryPacketElement )]
+  [CollectionItemAssociation( TSLUInt16MakeStructureElement )]
+  +TArduinoUnsigned16BinaryUnpacketElement : TArduinoBasicUnsignedBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Integer 8bit' )]
+  [Name( 'Integer 8bit' )]
+  [ArduinoTemplateParameter( 'PIN', 'int32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'int8_t' )]
+  [ArduinoOpenWireStudioMatch( TSLInt8MakeStructureElement )]
+  [ParentImage( TArduinoInteger8BinaryPacketElement )]
+  [CollectionItemAssociation( TSLInt8MakeStructureElement )]
+  +TArduinoInteger8BinaryUnpacketElement : TArduinoBasicIntegerBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Unsigned 8bit' )]
+  [Name( 'Unsigned 8bit' )]
+  [ArduinoTemplateParameter( 'PIN', 'uint32_t' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint8_t' )]
+  [ArduinoOpenWireStudioMatch( TSLUInt8MakeStructureElement )]
+  [ParentImage( TArduinoUnsigned8BinaryPacketElement )]
+  [CollectionItemAssociation( TSLUInt8MakeStructureElement )]
+  +TArduinoUnsigned8BinaryUnpacketElement : TArduinoBasicUnsignedBinaryUnpacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Analog' )]
+  [Name( 'Analog' )]
+  [ArduinoTemplateParameter( 'PIN', 'float' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [ArduinoOpenWireStudioMatch( TSLFloatMakeStructureElement )]
+  [ParentImage( TArduinoAnalogBinaryPacketElement )]
+  [CollectionItemAssociation( TSLFloatMakeStructureElement )]
+  +TArduinoAnalogBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoAnalogBinaryUnpacketElement )]
+    OutputPin : TOWArduinoAnalogSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Complex' )]
+  [Name( 'Complex' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TComplex' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [ArduinoOpenWireStudioMatch( TSLFloatMakeStructureElement )]
+  [ParentImage( TArduinoComplexBinaryPacketElement )]
+  [CollectionItemAssociation( TSLComplexFloatMakeStructureElement )]
+  +TArduinoComplexBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoComplexBinaryUnpacketElement )]
+    OutputPin : TOWArduinoComplexSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Quaternion' )]
+  [Name( 'Quaternion' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TQuaternion' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TQuaternion' )]
+  [ArduinoOpenWireStudioMatch( TSLFloatMakeStructureElement )]
+  [ParentImage( TArduinoQuaternionBinaryPacketElement )]
+  [CollectionItemAssociation( TSLQuaternionFloatMakeStructureElement )]
+  +TArduinoQuaternionBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoQuaternionBinaryUnpacketElement )]
+    OutputPin : TOWArduinoQuaternionSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::BasicTypedUnpacketSourceElement' )]
+  [CreateName( 'Date/Time' )]
+  [Name( 'Date/Time' )]
+  [ArduinoTemplateParameter( 'PIN', 'Mitov::TDateTime' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TDateTime' )]
+  [ArduinoOpenWireStudioMatch( TSLDateTimeMakeStructureElement )]
+  [ParentImage( TArduinoDateTimeBinaryPacketElement )]
+  [CollectionItemAssociation( TSLDateTimeMakeStructureElement )]
+  +TArduinoDateTimeBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoDateTimeBinaryUnpacketElement )]
+    OutputPin : TOWArduinoDateTimeSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketTextBinaryElement' )]
+  [CreateName( 'Text' )]
+  [Name( 'Text' )]
+  [ArduinoOpenWireStudioMatch( TSLStringMakeStructureElement )]
+  [ParentImage( TArduinoTextBinaryPacketElement )]
+  [CollectionItemAssociation( TSLStringMakeStructureElement )]
+  +TArduinoTextBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoTextBinaryUnpacketElement )]
+    OutputPin : TOWArduinoStringSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketArrayBinaryElement' )]
+  [CreateName( 'Analog Array' )]
+  [Name( 'Analog Array' )]
+  [ArduinoTemplateParameter( 'TYPE', 'float' )]
+  [ParentImage( TArduinoAnalogArrayBinaryPacketElement )]
+  [CollectionItemAssociation( TSLFloatBufferMakeStructureElement )]
+  +TArduinoAnalogArrayBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoAnalogArrayBinaryUnpacketElement )]
+    OutputPin : TOWArduinoAnalogArraySourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketArrayBinaryElement' )]
+  [CreateName( 'Binary Block' )]
+  [Name( 'Binary Block' )]
+  [ArduinoTemplateParameter( 'TYPE', 'uint8_t' )]
+  [ParentImage( TArduinoBinaryBlockBinaryPacketElement )]
+  [CollectionItemAssociation( TSLBlockBufferMakeStructureElement )]
+  +TArduinoBinaryBlockBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoBinaryBlockBinaryUnpacketElement )]
+    OutputPin : TOWArduinoByteSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketArrayBinaryElement' )]
+  [CreateName( 'Complex Array' )]
+  [Name( 'Complex Array' )]
+  [ArduinoTemplateParameter( 'TYPE', 'Mitov::TComplex' )]
+  [ParentImage( TArduinoComplexArrayBinaryPacketElement )]
+  [CollectionItemAssociation( TSLComplexFloatBufferMakeStructureElement )]
+  +TArduinoComplexArrayBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoComplexArrayBinaryUnpacketElement )]
+    OutputPin : TOWArduinoComplexArraySourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketDigitalBinaryElement' )]
+  [CreateName( 'Digital' )]
+  [Name( 'Digital' )]
+  [ArduinoOpenWireStudioMatch( TSLBooleanMakeStructureElement )]
+  [ParentImage( TArduinoDigitalBinaryPacketElement )]
+  [CollectionItemAssociation( TSLBooleanMakeStructureElement )]
+  +TArduinoDigitalBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoDigitalBinaryUnpacketElement )]
+    OutputPin : TOWArduinoDigitalSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::UnpacketClockBinaryElement' )]
+  [CreateName( 'Clock Event' )]
+  [Name( 'Clock Event' )]
+  [ArduinoOpenWireStudioMatch( TSLClockMakeStructureElement )]
+  [ParentImage( TArduinoClockBinaryPacketElement )]
+  [CollectionItemAssociation( TSLClockMakeStructureElement )]
+  +TArduinoClockBinaryUnpacketElement : TArduinoBasicUnpacketElement
+
+    [OWPrimaryPin]
+    [OWPinGroup( TArduinoClockBinaryUnpacketElement )]
+    OutputPin : TOWArduinoClockSourcePin
+    
+    [OldName( 'IdleOutput' )]
+    IdleOutputPin : TOWArduinoClockSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoHeadMarkerBinaryPacketElement' )]
+  [ParentImage( TArduinoMarkerBinaryPacketElement )]
+  *TArduinoHeadMarkerBinaryPacketElement : TArduinoCodePersistent
+  
+    Bytes : TArduinoBinaryPersistent
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::TArduinoHeadMarkerBinaryUnpacketElement' )]
+  TArduinoHeadMarkerBinaryUnpacketElement : TArduinoHeadMarkerBinaryPacketElement;
+//---------------------------------------------------------------------------
+  [ArduinoClass( 'Mitov::PacketChecksumElement' )]
+  *TArduinoChecksumPacketElement : TArduinoCodeEnabledPersistent;
+//---------------------------------------------------------------------------
+  TArduinoPacketUnpacket_Extender : Extender
+
+    [ComponentEditorEntryDesign( 'Edit E&lements ...', True )]
+    [ArduinoExcludeCollectionItems]
+    [ArduinoTemplateParameterCollectionCount]
+    Elements
+
+    Checksum : TArduinoChecksumPacketElement
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Packet.h' )]
+  [ArduinoClass( 'Mitov::Packet' )]
+  [CreateName( 'Packet' )]
+  [Name( 'Packet' )]
+  [Category( TCommunicationToolbarCategory )]
+  [ArduinoStart]
+  [ArduinoVariable( Boolean, 'FNeedsNewSize' )]
+  [ArduinoVariable( Boolean, 'FModified' )]
+  [ArduinoVariable( Boolean, 'FRefreshed' )]
+  +TArduinoPacket : TArduinoBasicPacket, TArduinoPacketUnpacket_Extender
+
+    HeadMarker : TArduinoHeadMarkerBinaryPacketElement
+
+  ;
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Packet.h' )]
+  [ArduinoClass( 'Mitov::Unpacket' )]
+  [CreateName( 'Unpacket' )]
+  [Name( 'Unpacket' )]
+  [Category( TCommunicationToolbarCategory )]
+  [ArduinoStart]
+  +TArduinoUnpacket : TArduinoBasicUnpacket, TArduinoPacketUnpacket_Extender
+
+    UnpackedOutputPin : TOWArduinoClockSourcePin
+
+    HeadMarker : TArduinoHeadMarkerBinaryUnpacketElement
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

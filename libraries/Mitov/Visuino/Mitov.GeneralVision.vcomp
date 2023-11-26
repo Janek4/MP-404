@@ -1,0 +1,41 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoInit]
+//  [ArduinoStart]
+  [ArduinoExcludeUnconnectedAndDefault]
+  [ParentImage( TArduinoGeneralVisionNeuron )]
+  [ArduinoInclude( 'Mitov_GeneralVision_Neurons.h' )]
+  [ArduinoClass( '::Mitov::ArduinoGeneralVisionNeuronsModule' )]
+  TArduinoGeneralVisionNeurons_Extender : Extender
+
+    ForgetInputPin : TOWArduinoClockSinkPin
+    
+//    AllocatedNeuronsOutputPin  : TOWArduinoUnsignedSourcePin
+    
+    [ComponentEditorEntryDesign( 'Edit C&lassifiers ...' )]
+    Classifiers : TArduinoGeneralVisionNeuronClassifiers    
+
+  ;
+//---------------------------------------------------------------------------
+  [Name( 'Forget' )]
+//  [ArduinoClass( 'Mitov::Arduino101NeuronForgetOperation' )]
+  [ArduinoClass( 'Mitov::GeneralVisionNeuronForgetOperation' )]
+  [OldName( 'TArduino101NeuronForgetOperation' )]
+  +TArduinoGeneralVisionNeuronForgetOperation : TArduinoGeneralVisionNeuronBasicClockedOperation;
+//---------------------------------------------------------------------------
+  [Name( 'Read Knowledge' )]
+//  [ArduinoClass( 'Mitov::Arduino101NeuronReadKnowledgeOperation' )]
+  [ArduinoClass( 'Mitov::GeneralVisionNeuronReadKnowledgeOperation' )]
+  [OldName( 'TArduino101NeuronReadKnowledgeOperation' )]
+  +TArduinoGeneralVisionNeuronReadKnowledgeOperation : TArduinoGeneralVisionNeuronBasicClockedOperation
+
+    FeaturesOutputPin : TOWArduinoAnalogArraySourcePin
+    CategoryOutputPin : TOWArduinoIntegerSourcePin
+    InfluenceFieldOutputPin : TOWArduinoUnsignedSourcePin
+    MinInfluenceFieldOutputPin : TOWArduinoUnsignedSourcePin
+    NeuronCompletedOutputPin : TOWArduinoClockSourcePin
+    CompletedOutputPin : TOWArduinoClockSourcePin
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov

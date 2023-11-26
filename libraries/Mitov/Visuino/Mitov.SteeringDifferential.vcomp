@@ -1,0 +1,24 @@
+Mitov : Namespace
+//---------------------------------------------------------------------------
+  [ArduinoInclude( 'Mitov_Steering_Differential.h' )]
+  [ArduinoClass( 'Mitov::SteeringDifferential' )]
+  [Name( 'Steering Differential' )]
+  [CreateName( 'Steering' )]
+  [Category( TArduinoAnalogConvertersToolbarCategory )]
+  +TArduinoSteeringDifferential : TArduinoComponent
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Direction', TOWArduinoAnalogSinkPin )]
+    [OWAddPin( 'Speed', TOWArduinoAnalogSinkPin )]
+    SteeringInputPins : TOWArduinoPinList
+
+    [OWPrimaryPin]
+    [OWPinListPrimaryPinType( TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Left', TOWArduinoAnalogSourcePin )]
+    [OWAddPin( 'Right', TOWArduinoAnalogSourcePin )]
+    MotorsOutputPins : TOWArduinoPinList
+
+  ;
+//---------------------------------------------------------------------------
+; // Mitov
