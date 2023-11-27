@@ -1,0 +1,35 @@
+Guru Meditation Error: Core  0 panic'ed (Unhandled debug exception). 
+Debug exception reason: BREAK instr 
+Guru Meditation Error: Core  0 panic'ed (Unhandled debug exception). 
+Debug exception reason: Stack canary watchpoint triggered (Guru Meditation Error: Core  0 panic'ed (LoadProhibited). Exception was unhandled.
+
+Core  0 register dump:
+PC      : 0x400da5cb  PS      : 0x00060034  A0      : 0x800dacb1  A1      : 0x3ffbc2e0  
+A2      : 0x00000539  A3      : 0x001f8000  A4      : 0x000007d0  A5      : 0x601f8000  
+A6      : 0x3ffbc670  A7      : 0x00000000  A8      : 0x00000538  A9      : 0x3ffbc2a0  
+A10     : 0x00000000  A11     : 0x3ffbc2cc  A12     : 0x0000000a  A13     : 0x3ffbc2d8  
+A14     : 0x3ffbc670  A15     : 0x00000000  SAR     : 0x00000020  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000538  LBEG    : 0x40085f6c  LEND    : 0x40085f77  LCOUNT  : 0xffffffff  
+
+
+Backtrace: 0x400da5c8:0x3ffbc2e0 0x400dacae:0x3ffbc300 0x400da703:0x3ffbc320 0x400dab07:0x3ffbc390 0x4008348c:0x3ffbc3e0 0x40085315:0x3ffbc400 0x00040021:0x3ffbc4c0 |<-CORRUPTED
+
+
+
+
+ELF file SHA256: 0000000000000000
+
+E (206) esp_core_dump_flash: Core dump flash config is corrupted! CRC=0x4c0b365d instead of 0x0
+Rebooting...
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:1344
+load:0x40078000,len:13964
+load:0x40080400,len:3600
+entry 0x400805f0
+can init ok!!
+MCP2515 Library Receive Example...
