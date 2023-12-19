@@ -1,0 +1,31 @@
+>ASSERT_WARN(1 8), in lc_task.c at line 1408
+
+12:41:42.950 -> ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408at z
+12:42:30.489 -> at z
+
+
+ELM327 v1.5
+
+
+12:42:31.360 -> >ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408at e0
+12:42:50.104 -> at e0
+OK
+
+
+12:42:50.104 -> >ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408at s0
+12:43:55.980 -> OK
+
+
+12:43:55.980 -> >ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408at al
+12:44:09.055 -> OK
+
+
+12:44:09.055 -> >ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408at tp a0
+12:44:19.781 -> OK
+
+
+12:44:19.781 -> >ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 1408ASSERT_WARN(1 8), in lc_task.c at line 14080101c
+12:45:23.765 -> SEARCHING...
+ASSERT_WARN(1 8), in lc_task.c at line 1408410100068000
+ASSERT_WARN(1 8), in lc_task.c at line 1408
+

@@ -3,7 +3,6 @@
 // Piny pro první displej
 #define CLK_PIN_1 14 // Připojeno k pinu CLK prvního displeje
 #define DIO_PIN_1 27 // Připojeno k pinu DIO prvního displeje
-
 // Piny pro druhý displej
 #define CLK_PIN_2 33 // Připojeno k pinu CLK druhého displeje
 #define DIO_PIN_2 32 // Připojeno k pinu DIO druhého displeje
@@ -15,8 +14,8 @@ int counter1 = 990; // Počáteční hodnota pro první displej
 int counter2 = 0;  // Počáteční hodnota pro druhý displej
 
 void setup() {
-  display1.setBrightness(0x0f); // Nastav jas prvního displeje na polovinu
-  display2.setBrightness(0x07); // Nastav jas druhého displeje na polovinu
+  display1.setBrightness(7); // Nastav jas prvního displeje na max
+  display2.setBrightness(7); // Nastav jas modrého displeje 0 - 7
 }
 
 void loop() {

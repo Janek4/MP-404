@@ -9,7 +9,7 @@ void setup() {
   Serial.begin(115200);
   
   mcp2515.reset();
-  mcp2515.setBitrate(CAN_125KBPS);
+  mcp2515.setBitrate(CAN_10KBPS);
   mcp2515.setNormalMode();
   
   Serial.println("------- CAN Read ----------");

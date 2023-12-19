@@ -9,7 +9,7 @@ MCP_CAN CAN0(5);  // nastavit CS k pinu 5
 void setup() {
   Serial.begin(115200);
   pinMode(21, INPUT);
-  if (CAN0.begin(MCP_STDEXT, CAN_500KBPS, MCP_8MHZ) == CAN_OK) {
+  if (CAN0.begin(MCP_STDEXT, CAN_10KBPS, MCP_8MHZ) == CAN_OK) {
      Serial.print("can init ok!!\r\n");
   } else {
      Serial.print("Can init fail!!\r\n");
