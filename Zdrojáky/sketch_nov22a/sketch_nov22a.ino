@@ -10,8 +10,8 @@
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
-int counter1 = 990; // Počáteční hodnota pro první displej
-int counter2 = 0;  // Počáteční hodnota pro druhý displej
+int counter1 = 3990; // Počáteční hodnota pro první displej
+int counter2 = 3990;  // Počáteční hodnota pro druhý displej
 
 void setup() {
   display1.setBrightness(7); // Nastav jas prvního displeje na max
@@ -25,7 +25,7 @@ void loop() {
 
   // Zvyšuj číslo na druhém displeji od nuly
   display2.showNumberDec(counter2, true);
-  counter2++;
+  counter2--;
 
-  delay(1); // Čekej 0.001 sekundy
+  //delay(1); // Čekej 0.001 sekundy
 }

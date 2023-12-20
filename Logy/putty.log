@@ -1,0 +1,3229 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2023.12.20 12:31:44 =~=~=~=~=~=~=~=~=~=~=~=
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:1344
+load:0x40078000,len:13964
+load:0x40080400,len:3600
+entry 0x400805f0
+Clearing input serial buffer
+Sending the following command/query: AT D
+Received char: \r
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT Z
+Received char: A
+Received char: T
+Received char: _
+Received char: Z
+Received char: \r
+Received char: \r
+Received char: \r
+Received char: E
+Received char: L
+Received char: M
+Received char: 3
+Received char: 2
+Received char: 7
+Received char: _
+Received char: v
+Received char: 1
+Received char: .
+Received char: 5
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ATZELM327v1.5
+Clearing input serial buffer
+Sending the following command/query: AT E0
+Received char: A
+Received char: T
+Received char: _
+Received char: E
+Received char: 0
+Received char: \r
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ATE0OK
+Clearing input serial buffer
+Sending the following command/query: AT S0
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT AL
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT ST 00
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT SP A0
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: 0100
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: U
+Received char: N
+Received char: A
+Received char: B
+Received char: L
+Received char: E
+Received char: _
+Received char: T
+Received char: O
+Received char: _
+Received char: C
+Received char: O
+Received char: N
+Received char: N
+Received char: E
+Received char: C
+Received char: T
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: SEARCHING...UNABLETOCONNECT
+ELM responded with error "UNABLE TO CONNECT"
+Setting protocol via AT TP A%c did not work - trying via AT SP %c
+Clearing input serial buffer
+Sending the following command/query: AT SP 0
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Setting protocol via AT SP %c did not work
+Connected to ELM327
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Expected response header: 410D
+Response not detected
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded wiASSERT_WARN(1 8), in lc_task.c at line 1408th error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: .
+Received char: .
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ..STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: SEARCHING...STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: .
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: .STOPPED
+ELM responded with error "STOPPED"
+Received: .STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \rASSERT_WARN(1 8), in lc_task.c at line 1408
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \rASSERT_WARN(1 8), in lc_task.c at line 1408
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 4105
+Response not detected
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Expected response header: 4105
+Response not detected
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded wiASSERT_WARN(1 8), in lc_task.c at line 1408th error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Received: STOPPED
+ERROR: ELM_STOPPED
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+SASSERT_WARN(1 8), in lc_task.c at line 1408ending the following command/query: 01051
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ...STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Received: SEARCHING...
+ERROR: ELM_TIMEOUT
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: SEARCHING...STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: S
+Received char: T
+Received char: O
+Received char: P
+Received char: P
+Received char: E
+Received char: D
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: STOPPED
+ELM responded with error "STOPPED"
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+T

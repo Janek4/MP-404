@@ -1,0 +1,6407 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2023.12.20 12:37:14 =~=~=~=~=~=~=~=~=~=~=~=
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:1
+load:0x3fff0030,len:1344
+load:0x40078000,len:13964
+load:0x40080400,len:3600
+entry 0x400805f0
+Clearing input serial buffer
+Sending the following command/query: AT D
+Received char: \r
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT Z
+Received char: A
+Received char: T
+Received char: _
+Received char: Z
+Received char: \r
+Received char: \r
+Received char: \r
+Received char: E
+Received char: L
+Received char: M
+Received char: 3
+Received char: 2
+Received char: 7
+Received char: _
+Received char: v
+Received char: 1
+Received char: .
+Received char: 5
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ATZELM327v1.5
+Clearing input serial buffer
+Sending the following command/query: AT E0
+Received char: A
+Received char: T
+Received char: _
+Received char: E
+Received char: 0
+Received char: \r
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: ATE0OK
+Clearing input serial buffer
+Sending the following command/query: AT S0
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT AL
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars receivedASSERT_WARN(1 8), in lc_task.c at line 1408: OK
+Clearing input serial buffer
+Sending the following command/query: AT ST 00
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: AT SP A0
+Received char: O
+Received char: K
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: OK
+Clearing input serial buffer
+Sending the following command/query: 0100
+Received char: S
+Received char: E
+Received char: A
+Received char: R
+Received char: C
+Received char: H
+Received char: I
+Received char: N
+Received char: G
+Received char: .
+Received char: .
+Received char: .
+Received char: \r
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: 0
+Received char: 9
+Received char: 8
+Received char: 3
+Received char: B
+Received char: 8
+Received char: 0
+Received char: 1
+Received char: 1
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: SEARCHING...4100983B8011
+Connected to ELM327
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+DeASSERT_WARN(1 8), in lc_task.c at line 1408limiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 4105
+Response not detected
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Battery Voltage: 410
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+DeASSERT_WARN(1 8), in lc_task.c at line 1408limiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Battery Voltage: 410
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 4105
+Response not detected
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410D
+Response not detected
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 4105
+Response not detected
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410D
+Response not detected
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 8
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.8V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros found
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 7
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.7V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0000
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros found
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 0
+Received char: .
+Received char: 4
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 10.4V
+Battery Voltage: 10
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: B
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0EB0
+Battery Voltage: 410
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: F
+Received char: 6
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0F6C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 108
+responseByte_1: 15
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 1
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.1V
+Expected response header: 410D
+Response not detected
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 1
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.1V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 5
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E54
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 84
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 1
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.1V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 2
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E20
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 32
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E1C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 28
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 1
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.1V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 3
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E30
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 48
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 0
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+DeASSERT_WARN(1 8), in lc_task.c at line 1408limiter found.
+All chars received: 410C0E08
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 8
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 2
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E28
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 40
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Battery Voltage: 410536
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E1C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 28
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E18
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 24
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 2
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E20
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 32
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 0
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E0C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 12
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410C
+Response not detected
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410D
+Response not detected
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 1
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.1V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E18
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 24
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E14
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 20
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E10
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 16
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Expected response header: 4105
+Response not detected
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 2
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E20
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 32
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 0
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E0C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 12
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+respASSERT_WARN(1 8), in lc_task.c at line 1408onseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E18
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 24
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 0
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E0C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 12
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+ASSERT_WARN(1 8), in lc_task.c at line 1408RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E10
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 16
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 6
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410536
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 54
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E14
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 20
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 2
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E24
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 36
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E18
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 24
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: C
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E1C
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 28
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 7
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410537
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 55
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Battery Voltage: 410
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 0
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E08
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 8
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 3
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.3V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E14
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 20
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+ASSERT_WARN(1 8), in lc_task.c at line 1408Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 4
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E14
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 20
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Expected response header: 410C
+Response not detected
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 7
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410537
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 55
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: C
+Received char: 0
+Received char: E
+Received char: 1
+Received char: 8
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410C0E18
+Expected response header: 410C
+Single response detected
+64-bit response: 
+responseByte_0: 24
+responseByte_1: 14
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Looking for lagging zeros
+Lagging zeros not found - assuming leading zeros
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: 5
+Received char: 3
+Received char: 7
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410537
+Expected response header: 4105
+Single response detected
+64-bit response: 
+responseByte_0: 55
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+WARNING: Number of payload chars is less than the number of expected response chars returned by ELM327 - returning 0
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+ASSERT_WARN(1 8), in lc_task.c at line 1408Received char: 4
+Received char: 1
+Received char: 0
+Received char: D
+Received char: 0
+Received char: 0
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 410D00
+Expected response header: 410D
+Single response detected
+64-bit response: 
+responseByte_0: 0
+responseByte_1: 0
+responseByte_2: 0
+responseByte_3: 0
+responseByte_4: 0
+responseByte_5: 0
+responseByte_6: 0
+responseByte_7: 0
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Received char: 1
+Received char: 2
+Received char: .
+Received char: 2
+Received char: V
+Received char: \r
+Received char: \r
+Received char: >
+Delimiter found.
+All chars received: 12.2V
+Battery Voltage: 12
+RPMS: 0
+SPEED in KM/H: 0
+Coolant Temp.: 0
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 5
+Normal length query detected
+Query string: 01051
+Clearing input serial buffer
+Sending the following command/query: 01051
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 12
+Normal length query detected
+Query string: 010C1
+Clearing input serial buffer
+Sending the following command/query: 010C1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Service: 1
+PID: 13
+Normal length query detected
+Query string: 010D1
+Clearing input serial buffer
+Sending the following command/query: 010D1
+Timeout detected with overflow of 0ms
+Clearing input serial buffer
+Sending the following command/query: AT RV
+T
