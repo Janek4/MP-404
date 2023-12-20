@@ -13,7 +13,7 @@ void setup() {
     digitalWrite(LED_BUILTIN, LOW);
 #endif
     DEBUG_PORT.begin(115200);
-    // SerialBT.setPin("1234");
+    //SerialBT.setPin("1234");
     ELM_PORT.begin("OBD II", true);
 
     if (!ELM_PORT.connect("OBD II")) {
