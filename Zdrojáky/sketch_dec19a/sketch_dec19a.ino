@@ -7,8 +7,7 @@ BluetoothSerial SerialBT;
 
 ELM327 myELM327;
 
-void setup()
-{
+void setup() {
 #if LED_BUILTIN
     pinMode(LED_BUILTIN, OUTPUT);
     digitalWrite(LED_BUILTIN, LOW);
@@ -31,12 +30,11 @@ void setup()
 }
 
 void loop() {
-    time = millis();
+    //time = millis();
     float rpm = myELM327.rpm();
     float kph = myELM327.kph();
     float temp = myELM327.engineCoolantTemp();
     float volts = myELM327.batteryVoltage();
-  if (time > 500) {
     if (myELM327.nb_rx_state == ELM_SUCCESS) {
         Serial.print("Battery Voltage: ");
         Serial.println(volts);
@@ -70,6 +68,4 @@ void loop() {
     else if (myELM327.nb_rx_state != ELM_GETTING_MSG) {
         myELM327.printError();
     }
-    time = 0;
-  }
 }
