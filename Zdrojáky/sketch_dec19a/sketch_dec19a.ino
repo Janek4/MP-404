@@ -1,11 +1,3 @@
-
-float volts = 0;
-float rpm = 0;
-float kph = 0;
-float temp = 0;
-
-
-
 #include "BluetoothSerial.h"
 #include "ELMduino.h"
 
