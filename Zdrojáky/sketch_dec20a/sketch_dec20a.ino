@@ -6,7 +6,7 @@ const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 ELM327 ELMo;
 
-typedef enum { ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 
 float rpm = 0;
