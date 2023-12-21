@@ -8,7 +8,7 @@ const bool HALT_ON_FAIL = false;
 //BluetoothSerial SerialBT;
 ELM327 ELMo;
 
-typedef enum { ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 
 float rpm = 0;
@@ -64,7 +64,7 @@ void loop() {
     }
 
     case TEMPERATURE: {
-      temp = ELMo.temp();
+      temp = ELMo.engineCoolantTemp();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("temp: ");
         Serial.println(temp);
@@ -78,7 +78,7 @@ void loop() {
     }
 
     case VOLTAGE: {
-      volt = ELMo.volt();
+      volt = ELMo.batteryVoltage();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
