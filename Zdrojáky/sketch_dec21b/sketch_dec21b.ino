@@ -1,12 +1,16 @@
+#include <BluetoothSerial.h>
 #include "ELMduino.h"
-#define ELM_PORT Serial1
+
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 2000;
+const int  TIMEOUT      = 5000;
 const bool HALT_ON_FAIL = false;
+BluetoothSerial SerialBT;
 ELM327 ELMo;
+#define ELM_PORT SerialBT
 
-typedef enum { ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 
 float rpm = 0;
@@ -16,7 +20,9 @@ float volt = 0;
 
 void setup() {
   Serial.begin(115200);
+  //SerialBT.begin("OBD II");
   ELM_PORT.begin(115200);
+  ELM_PORT.setPin("1234");
 
   Serial.println("Attempting to connect to ELM327...");
 
