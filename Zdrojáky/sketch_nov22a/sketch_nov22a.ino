@@ -1,31 +1,114 @@
+#include <BluetoothSerial.h>
+#include "ELMduino.h"
 #include <TM1637Display.h>
 
+const bool DEBUG        = true;
+const int  TIMEOUT      = 2000;
+const bool HALT_ON_FAIL = false;
+BluetoothSerial SerialBT;
+ELM327 ELMo;
+#define ELM_PORT SerialBT
+#define DEBUG_PORT Serial
 // Piny pro první displej
-#define CLK_PIN_1 14 // Připojeno k pinu CLK prvního displeje
-#define DIO_PIN_1 27 // Připojeno k pinu DIO prvního displeje
+#define CLK_PIN_1 14 // Připojeno k pinu CLK prvního displeje  zelený
+#define DIO_PIN_1 27 // Připojeno k pinu DIO prvního displeje  modrý
 // Piny pro druhý displej
-#define CLK_PIN_2 33 // Připojeno k pinu CLK druhého displeje
-#define DIO_PIN_2 32 // Připojeno k pinu DIO druhého displeje
-
+#define CLK_PIN_2 33 // Připojeno k pinu CLK druhého displeje  zelený
+#define DIO_PIN_2 32 // Připojeno k pinu DIO druhého displeje  modrý
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
-int counter1 = 3990; // Počáteční hodnota pro první displej
-int counter2 = 3990;  // Počáteční hodnota pro druhý displej
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+obd_pid_states obd_state = ENG_RPM;
+
+float rpm = 0;
+float kph = 0;
+float temp = 0;
+float volt = 0;
 
 void setup() {
   display1.setBrightness(7); // Nastav jas prvního displeje na max
   display2.setBrightness(7); // Nastav jas modrého displeje 0 - 7
+
+
+  Serial.begin(115200);
+  ELM_PORT.begin(115200);
+  //SerialBT.setPin("1234");
+  ELM_PORT.begin("OBD II", true);
+  if (!ELM_PORT.connect("OBD II")) {
+      DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
+      while (1);
+  }
+
+<<<<<<< HEAD
+  if (!ELMo.begin(ELM_PORT, true, 2000)) {
+=======
+  if (!myELM327.begin(ELM_PORT, true, 2000)) {
+>>>>>>> cf7978cecf4d934642a641c497a1c6fe15191d49
+      Serial.println("Couldn't connect to OBD scanner - Phase 2");
+      while (1);
+  }
+
+  Serial.println("Connected to ELM327");
 }
-
 void loop() {
-  // Sníž číslo na prvním displeji
-  display1.showNumberDec(counter1, true);
-  counter1++;
+  switch (obd_state) {
+    case ENG_RPM: {
+      rpm = ELMo.rpm();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("rpm: ");
+        Serial.println(rpm);
+        display2.showNumberDec(rpm, true);
+        obd_state = SPEED;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = SPEED;
+      }
+      break;
+    }
+    
+    case SPEED: {
+      kph = ELMo.kph();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("kph: ");
+        Serial.println(kph);
+        display1.showNumberDec(kph, true);
+        obd_state = TEMPERATURE;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = TEMPERATURE;
+      }
+      break;
+    }
 
-  // Zvyšuj číslo na druhém displeji od nuly
-  display2.showNumberDec(counter2, true);
-  counter2--;
+    case TEMPERATURE: {
+      temp = ELMo.engineCoolantTemp();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("temp: ");
+        Serial.println(temp);
+        obd_state = VOLTAGE;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = VOLTAGE;
+      }
+      break;
+    }
 
-  //delay(1); // Čekej 0.001 sekundy
+    case VOLTAGE: {
+      volt = ELMo.batteryVoltage();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("volt: ");
+        Serial.println(volt);
+        obd_state = ENG_RPM;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = ENG_RPM;
+      }
+      break;
+    }
+  }
 }
