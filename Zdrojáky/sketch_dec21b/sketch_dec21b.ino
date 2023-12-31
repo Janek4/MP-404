@@ -3,7 +3,7 @@
 #include <TM1637Display.h>
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 2000;
+const int  TIMEOUT      = 1000;
 const bool HALT_ON_FAIL = false;
 BluetoothSerial SerialBT;
 ELM327 ELMo;
@@ -54,7 +54,6 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("rpm: ");
         Serial.println(rpm);
-        display2.showNumberDec(rpm, true);
         obd_state = SPEED;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -69,7 +68,6 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("kph: ");
         Serial.println(kph);
-        display1.showNumberDec(kph, true);
         obd_state = TEMPERATURE;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -98,6 +96,7 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
+        display2.showNumberDec(volt, true);
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -107,4 +106,6 @@ void loop() {
       break;
     }
   }
+  display1.showNumberDec(kph, true);
+  
 }
