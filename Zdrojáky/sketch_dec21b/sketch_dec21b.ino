@@ -9,12 +9,12 @@ BluetoothSerial SerialBT;
 ELM327 ELMo;
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
-// Piny pro první displej
-#define CLK_PIN_1 14 // Připojeno k pinu CLK prvního displeje  zelený
-#define DIO_PIN_1 27 // Připojeno k pinu DIO prvního displeje  modrý
-// Piny pro druhý displej
-#define CLK_PIN_2 33 // Připojeno k pinu CLK druhého displeje  zelený
-#define DIO_PIN_2 32 // Připojeno k pinu DIO druhého displeje  modrý
+// Piny pro první displej zelený
+#define CLK_PIN_1 14 
+#define DIO_PIN_1 27 
+// Piny pro druhý displej modrý
+#define CLK_PIN_2 33
+#define DIO_PIN_2 32
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
@@ -98,7 +98,6 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
-        //display2.showNumberDec(volt, true);
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -107,7 +106,5 @@ void loop() {
       }
       break;
     }
-  }
-  //display1.showNumberDec(kph, true);
-  
+  }  
 }
