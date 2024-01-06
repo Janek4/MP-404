@@ -4,20 +4,20 @@
 
 IPAddress server(91, 103, 163, 85);
 char user[] = "TEST_SUBJECT1";
-char password[] = "";
+char password[] = "#ovoANKhvH7";
 char db[] = "DB_TEST";
 
-const char *ssid = "2 Girls 1 Hotspot";
-const char *password = "87654321";
+char ssid[] = "KulisovaWiFi";
+char pwd[] = "3215832158";
 
 WiFiClient client;
 MySQL_Connection conn(&client);
 
-const unsigned long interval = 5000;
+const unsigned long interval = 2000;
 unsigned long previousMillis = 0;
 
 void connectToWiFi() {
-  WiFi.begin(ssid, password);
+  WiFi.begin(ssid, pwd);
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Connecting to WiFi...");
@@ -42,14 +42,14 @@ void loop() {
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= interval) {
     // Získání hodnot nebo senzorů
-    float value1 = 1.23;
-    float value2 = 4.56;
-    float value3 = 7.89;
-    float value4 = 0.12;
+    float value1 = 100;
+    float value2 = 150;
+    float value3 = 3300;
+    float value4 = 14;
 
     // Příprava SQL dotazu
-    char query[128];
-    sprintf(query, "INSERT INTO DATA (column1, column2, column3, column4) VALUES (%f, %f, %f, %f)", value1, value2, value3, value4);
+    char query[256];
+    sprintf(query, "INSERT INTO 'DATA' ('TEMP', 'SPEED', 'RPMS', 'VOLTAGE') VALUES (%f, %f, %f, %f)", value1, value2, value3, value4);
 
     // Vykonání SQL dotazu
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
