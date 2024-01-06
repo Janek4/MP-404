@@ -3,7 +3,7 @@
 #include <TM1637Display.h>
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 1000;
+const int  TIMEOUT      = 500;
 const bool HALT_ON_FAIL = false;
 BluetoothSerial SerialBT;
 ELM327 ELMo;
@@ -18,13 +18,14 @@ ELM327 ELMo;
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
+float fuelRate = 0;
 
 void setup() {
   display1.setBrightness(7); // Nastav jas prvního displeje na max
@@ -98,6 +99,20 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
+        obd_state = FUEL_RATE;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = FUEL_RATE;
+      }
+      break;
+    }
+    
+    case FUEL_RATE: {
+      volt = ELMo.fuelRate();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("fuel R: ");
+        Serial.println(fuelRate);
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
