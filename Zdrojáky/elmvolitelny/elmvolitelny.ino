@@ -3,29 +3,29 @@
 #include <TM1637Display.h>
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 500;
+const int  TIMEOUT      = 1000;
 const bool HALT_ON_FAIL = false;
 BluetoothSerial SerialBT;
 ELM327 ELMo;
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
-// Piny pro první displej zelený
-#define CLK_PIN_1 14 
-#define DIO_PIN_1 27 
-// Piny pro druhý displej modrý
-#define CLK_PIN_2 33
-#define DIO_PIN_2 32
+// Piny pro první displej
+#define CLK_PIN_1 14 // Připojeno k pinu CLK prvního displeje  zelený
+#define DIO_PIN_1 27 // Připojeno k pinu DIO prvního displeje  modrý
+// Piny pro druhý displej
+#define CLK_PIN_2 33 // Připojeno k pinu CLK druhého displeje  zelený
+#define DIO_PIN_2 32 // Připojeno k pinu DIO druhého displeje  modrý
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
-
+int volba1 = 1;
+int volba2 = 1;
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-float fuelRate = 0;
 
 void setup() {
   display1.setBrightness(7); // Nastav jas prvního displeje na max
@@ -55,7 +55,9 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("rpm: ");
         Serial.println(rpm);
-        display2.showNumberDec(rpm, true);
+        if (volba2 == 1) {
+          display2.showNumberDec(rpm, true);
+        }
         obd_state = SPEED;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -70,7 +72,9 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("kph: ");
         Serial.println(kph);
-        display1.showNumberDec(kph, true);
+        if (volba1 == 1) {
+          display1.showNumberDec(kph, true);
+        }
         obd_state = TEMPERATURE;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -85,6 +89,9 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("temp: ");
         Serial.println(temp);
+        if (volba2 == 0) {
+          display2.showNumberDec(temp, true);
+        }
         obd_state = VOLTAGE;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -99,20 +106,9 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
-        obd_state = FUEL_RATE;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
-        ELMo.printError();
-        obd_state = FUEL_RATE;
-      }
-      break;
-    }
-    
-    case FUEL_RATE: {
-      volt = ELMo.fuelRate();
-      if (ELMo.nb_rx_state == ELM_SUCCESS) {
-        Serial.print("fuel R: ");
-        Serial.println(fuelRate);
+        if (volba1 == 0) {
+          display1.showNumberDec(volt, true);
+        }
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -121,5 +117,7 @@ void loop() {
       }
       break;
     }
-  }  
+  }
+  //display1.showNumberDec(kph, true);
+  
 }
