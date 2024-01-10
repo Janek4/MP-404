@@ -109,7 +109,7 @@ void loop() {
     }
     
     case FUEL_RATE: {
-      volt = ELMo.fuelRate();
+      fuelRate = ELMo.fuelRate();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("fuel R: ");
         Serial.println(fuelRate);
