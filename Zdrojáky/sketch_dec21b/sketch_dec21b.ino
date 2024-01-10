@@ -4,7 +4,12 @@
 #include <BluetoothSerial.h>
 #include "ELMduino.h"
 #include <TM1637Display.h>
+<<<<<<< HEAD
 //const bool DEBUG        = true;
+=======
+
+const bool DEBUG        = true;
+>>>>>>> 17bb253558fb922eb24999de86a882800731c29f
 const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
@@ -140,6 +145,7 @@ void loop() {
       }
       break;
     }
+<<<<<<< HEAD
   } 
   if (currentMillis - previousMillis >= interval) {
     char query[128];
@@ -152,3 +158,7 @@ void loop() {
     previousMillis = currentMillis;
   }
 }
+=======
+  }  
+}
+>>>>>>> 17bb253558fb922eb24999de86a882800731c29f
