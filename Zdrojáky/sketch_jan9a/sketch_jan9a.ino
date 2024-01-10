@@ -3,7 +3,7 @@
 #include <TM1637Display.h>
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 500;
+const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 BluetoothSerial SerialBT;
 ELM327 ELMo;
