@@ -4,9 +4,7 @@
 #include <BluetoothSerial.h>
 #include "ELMduino.h"
 #include <TM1637Display.h>
-<<<<<<< HEAD
 //const bool DEBUG        = true;
-const bool DEBUG        = true;
 const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
@@ -50,6 +48,11 @@ void setup() {
   
   Serial.begin(115200);
   connectToWiFi();
+  uint8_t mac[6];
+  
+  WiFi.macAddress(mac);
+  Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
+  
   if (conn.connect(server, 3306, user, password, db)) {
     Serial.println("Connected to MySQL server");
   } else {
