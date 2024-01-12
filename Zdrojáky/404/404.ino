@@ -4,32 +4,41 @@
 #include <BluetoothSerial.h>
 #include "ELMduino.h"
 #include <TM1637Display.h>
+
 //const bool DEBUG        = true;
 const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
+
 IPAddress server(91, 103, 163, 85);
 char user[] = "TEST_SUBJECT1";
 char password[] = "#ovoANKhvH7";
 char db[] = "DB_TEST";
-char ssid[] = "2 Girls 1 ESP";
+char ssid[] = "2Girls1ESP";
 char pwd[] = "87654321";
 WiFiClient client;
 MySQL_Connection conn(&client);
+
 BluetoothSerial SerialBT;
 ELM327 ELMo;
+
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
 #define CLK_PIN_1 14 
 #define DIO_PIN_1 27 
 #define CLK_PIN_2 33
 #define DIO_PIN_2 32
+#define LED_BUILTIN 2
+
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 10000;
+
+const unsigned long interval = 5000;
 unsigned long currentMillis = millis();
 unsigned long previousMillis = 0;
+
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
+
 float rpm = 0;
 float kph = 0;
 float temp = 0;
@@ -48,10 +57,13 @@ void setup() {
   display1.setBrightness(7);
   display2.setBrightness(2);
   
+  pinMode(LED_BUILTIN, OUTPUT);
+
   Serial.begin(115200);
   connectToWiFi();
   if (conn.connect(server, 3306, user, password, db)) {
     Serial.println("Connected to MySQL server");
+    digitalWrite(LED_BUILTIN, HIGH);
   } else {
     Serial.println("Connection failed.");
     while (1);

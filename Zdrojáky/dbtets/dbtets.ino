@@ -7,8 +7,8 @@ char user[] = "TEST_SUBJECT1";
 char password[] = "#ovoANKhvH7";
 char db[] = "DB_TEST";
 
-char ssid[] = "KulisovaWiFi";
-char pwd[] = "3215832158";
+char ssid[] = "2Girls1ESP";
+char pwd[] = "87654321";
 
 WiFiClient client;
 MySQL_Connection conn(&client);
@@ -49,10 +49,11 @@ void loop() {
     float value2 = random(0, 200); // Náhodné číslo od 50 do 200
     float value3 = random(798, 4500); // Náhodné číslo od 3000 do 4000
     float value4 = random(4, 14.9); // Náhodné číslo od 10 do 20
+    float value5 = random(0, 15); // Náhodné číslo od 10 do 20
 
     // Příprava SQL dotazu
     char query[256];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%f, %f, %f, %f)", value1, value2, value3, value4);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE, FUEL_RATE) VALUES (%lf, %lf, %lf, %lf, %lf)", value1, value2, value3, value4, value5);
 
     // Vykonání SQL dotazu
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
