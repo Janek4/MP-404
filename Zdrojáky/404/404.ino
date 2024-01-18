@@ -6,7 +6,7 @@
 #include <TM1637Display.h>
 
 //const bool DEBUG        = true;
-const int  TIMEOUT      = 2000;
+const int  TIMEOUT      = 1000;
 const bool HALT_ON_FAIL = false;
 
 IPAddress server(91, 103, 163, 85);
@@ -23,8 +23,8 @@ ELM327 ELMo;
 
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
-#define CLK_PIN_1 14 
-#define DIO_PIN_1 27 
+#define CLK_PIN_1 26 
+#define DIO_PIN_1 25 
 #define CLK_PIN_2 33
 #define DIO_PIN_2 32
 #define LED_BUILTIN 2
@@ -43,7 +43,7 @@ float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-float fuelRate = 0;
+float fuel = 0;
 
 void connectToWiFi() {
   WiFi.begin(ssid, pwd);
@@ -55,7 +55,7 @@ void connectToWiFi() {
 }
 void setup() {
   display1.setBrightness(7);
-  display2.setBrightness(2);
+  display2.setBrightness(4);
   
   pinMode(LED_BUILTIN, OUTPUT);
 
@@ -77,7 +77,7 @@ void setup() {
       while (1);
   }
 
-  if (!ELMo.begin(ELM_PORT, true, 2000)) {
+  if (!ELMo.begin(ELM_PORT, true, 1000)) {
       Serial.println("Couldn't connect to OBD scanner - Phase 2");
       while (1);
   }
@@ -140,11 +140,11 @@ void loop() {
       break;
     }
     case FUEL_RATE: {
-      fuelRate = ELMo.fuelRate();
+      fuel = ELMo.fuelRate();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("fuel R: ");
-        Serial.println(fuelRate);
-        display2.showNumberDec(fuelRate, false);
+        Serial.println(fuel);
+        display2.showNumberDec(fuel, false);
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
