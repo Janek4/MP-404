@@ -10,22 +10,21 @@ ELM327 ELMo;
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
 // Piny pro první displej zelený
-#define CLK_PIN_1 14 
-#define DIO_PIN_1 27 
+#define CLK_PIN_1 26 
+#define DIO_PIN_1 25 
 // Piny pro druhý displej modrý
 #define CLK_PIN_2 33
 #define DIO_PIN_2 32
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-float fuelRate = 0;
 
 void setup() {
   display1.setBrightness(7);
@@ -55,7 +54,7 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("rpm: ");
         Serial.println(rpm);
-        //display2.showNumberDec(rpm, true);
+        display2.showNumberDec(rpm, false);
         obd_state = SPEED;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -93,27 +92,11 @@ void loop() {
       }
       break;
     }
-
     case VOLTAGE: {
       volt = ELMo.batteryVoltage();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("volt: ");
         Serial.println(volt);
-        obd_state = FUEL_RATE;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
-        ELMo.printError();
-        obd_state = FUEL_RATE;
-      }
-      break;
-    }
-    
-    case FUEL_RATE: {
-      fuelRate = ELMo.fuelRate();
-      if (ELMo.nb_rx_state == ELM_SUCCESS) {
-        Serial.print("fuel R: ");
-        Serial.println(fuelRate);
-        display2.showNumberDec(fuelRate, false);
         obd_state = ENG_RPM;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
