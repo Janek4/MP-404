@@ -156,7 +156,7 @@ void loop() {
     }
   } 
   if (currentMillis - previousMillis >= interval) {
-    char query[256];
+    char query[128];
     sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf)", temp, kph, rpm, volt);
     //Serial.println("10 secs up");
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
