@@ -3,7 +3,7 @@
 #include <TM1637Display.h>
 
 const bool DEBUG        = true;
-const int  TIMEOUT      = 1000;
+const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 BluetoothSerial SerialBT;
 ELM327 ELMo;
@@ -41,7 +41,7 @@ void setup() {
       while (1);
   }
 
-  if (!ELMo.begin(ELM_PORT, true, 1000)) {
+  if (!ELMo.begin(ELM_PORT, true, 4000)) {
       Serial.println("Couldn't connect to OBD scanner - Phase 2");
       while (1);
   }
