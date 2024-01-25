@@ -5,7 +5,7 @@
 #include "ELMduino.h"
 #include <TM1637Display.h>
 //const bool DEBUG        = true;
-const int  TIMEOUT      = 1000;
+const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
 char user[] = "TEST_SUBJECT1";
@@ -25,7 +25,7 @@ ELM327 ELMo;
 #define DIO_PIN_2 32
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 5000;
+const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
@@ -59,13 +59,13 @@ void setup() {
     while (1);
   }
   display1.setBrightness(7);
-  display2.setBrightness(2);
+  display2.setBrightness(5);
   SerialBT.begin("OBD II", true);
   if (!ELM_PORT.connect("OBD II")) {
     DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
     while (1);
   }
-  if (!ELMo.begin(ELM_PORT, true, 2000)) {
+  if (!ELMo.begin(ELM_PORT, true, 4000)) {
     Serial.println("Couldn't connect to OBD scanner - Phase 2");
     while (1);
   }
@@ -158,7 +158,7 @@ void loop() {
   if (currentMillis - previousMillis >= interval) {
     char query[128];
     sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf)", temp, kph, rpm, volt);
-    //Serial.println("10 secs up");
+    //Serial.println("5 secs up");
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
