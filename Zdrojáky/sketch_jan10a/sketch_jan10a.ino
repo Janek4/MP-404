@@ -29,11 +29,11 @@ const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
-float rpm = 0;
+/*float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-float fuelRate = 0;
+float fuelRate = 0;*/
 
 void connectToWiFi() {
   WiFi.begin(ssid, pwd);
@@ -72,6 +72,11 @@ void setup() {
   Serial.println("Connected to ELM327");
 }
 void loop() {
+  float rpm = 0;
+  float kph = 0;
+  float temp = 0;
+  float volt = 0;
+  float fuelRate = 0;
   unsigned long currentMillis = millis();
   switch (obd_state) {
     case ENG_RPM: {
@@ -79,7 +84,7 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("rpm: ");
         Serial.println(rpm);
-        display1.showNumberDec(rpm, false);
+        display2.showNumberDec(rpm, false);
         obd_state = SPEED;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -93,7 +98,7 @@ void loop() {
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("kph: ");
         Serial.println(kph);
-        display2.showNumberDec(kph, false);
+        display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
       }
       else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
