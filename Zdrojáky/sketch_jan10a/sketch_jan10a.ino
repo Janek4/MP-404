@@ -23,6 +23,8 @@ ELM327 ELMo;
 #define DIO_PIN_1 25 
 #define CLK_PIN_2 33 //dolní - zelený
 #define DIO_PIN_2 32
+#define LED_BUILTIN 2
+
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 const unsigned long interval = 1000;
@@ -46,7 +48,8 @@ void connectToWiFi() {
 
 void setup() {
   Serial.begin(115200);
-  
+  pinMode(LED_BUILTIN, OUTPUT);
+
   connectToWiFi();
   uint8_t mac[6];
   
@@ -54,6 +57,7 @@ void setup() {
   Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
   if (conn.connect(server, 3306, user, password, db)) {
     Serial.println("Connected to MySQL server");
+    digitalWrite(LED_BUILTIN, HIGH);
   } else {
     Serial.println("Connection failed.");
     while (1);
@@ -72,12 +76,9 @@ void setup() {
   Serial.println("Connected to ELM327");
 }
 void loop() {
-  float rpm = 0;
-  float kph = 0;
-  float temp = 0;
-  float volt = 0;
-  float fuelRate = 0;
   unsigned long currentMillis = millis();
+  float rpm, kph, temp, volt, fuelRate;
+
   switch (obd_state) {
     case ENG_RPM: {
       rpm = ELMo.rpm();
@@ -85,9 +86,10 @@ void loop() {
         Serial.print("rpm: ");
         Serial.println(rpm);
         display2.showNumberDec(rpm, false);
-        obd_state = SPEED;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        if (rpm != 0) {
+          obd_state = SPEED;
+        }
+      } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = SPEED;
       }
@@ -100,8 +102,7 @@ void loop() {
         Serial.println(kph);
         display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+      } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = TEMPERATURE;
       }
@@ -113,8 +114,7 @@ void loop() {
         Serial.print("temp: ");
         Serial.println(temp);
         obd_state = VOLTAGE;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+      } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = VOLTAGE;
       }
@@ -126,48 +126,32 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         obd_state = FUEL_RATE;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+      } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = FUEL_RATE;
       }
       break;
     }
-    /*case VOLTAGE: {
-      volt = ELMo.batteryVoltage();
-      if (ELMo.nb_rx_state == ELM_SUCCESS) {
-        Serial.print("volt: ");
-        Serial.println(volt);
-        obd_state = ENG_RPM;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
-        ELMo.printError();
-        obd_state = ENG_RPM;
-      }
-      break;
-    }*/
     case FUEL_RATE: {
       fuelRate = ELMo.fuelRate();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("fuel R: ");
         Serial.println(fuelRate);
         obd_state = ENG_RPM;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+      } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = ENG_RPM;
       }
       break;
     }
-  } 
-  if (currentMillis - previousMillis >= interval) {
+  }
+
+  if (currentMillis - previousMillis >= interval && rpm != 0) {
     char query[128];
     sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf)", temp, kph, rpm, volt);
-    //Serial.println("5 secs up");
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
-
     previousMillis = currentMillis;
   }
 }
