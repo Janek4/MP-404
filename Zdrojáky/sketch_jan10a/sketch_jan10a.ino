@@ -140,7 +140,7 @@ void loop() {
     }
   }
 
-  if (currentMillis - previousMillis >= interval && rpm != 0) {
+  if (currentMillis - previousMillis >= interval && dbrpm != 0) {
     char query[128];
     sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf)", dbtemp, dbkph, dbrpm, dbvolt);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
