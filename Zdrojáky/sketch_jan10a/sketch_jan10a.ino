@@ -29,16 +29,19 @@ TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
+float fuel = 0;
 float dbrpm;
 float dbkph;
 float dbtemp;
 float dbvolt;
+float dbfuel;
+float dbkph2;
 
 void connectToWiFi() {
   WiFi.begin(ssid, pwd);
@@ -104,6 +107,7 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
+        dbkph2 = dbkph * 0,912;
         display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -131,8 +135,22 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
-        obd_state = ENG_RPM;
+        obd_state = FUEL_RATE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
+        ELMo.printError();
+        obd_state = FUEL_RATE;
+      }
+      break;
+    }
+    case FUEL_RATE: {
+      fuel = ELMo.fuelRate();
+      if (ELMo.nb_rx_state == ELM_SUCCESS) {
+        Serial.print("fuel: ");
+        Serial.println(fuel);
+        dbfuel = fuel;
+        obd_state = ENG_RPM;
+      }
+      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = ENG_RPM;
       }
@@ -140,9 +158,9 @@ void loop() {
     }
   }
 
-  if (currentMillis - previousMillis >= interval && dbrpm != 0) {
+  if (currentMillis - previousMillis >= interval && dbrpm >= 500) {
     char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf)", dbtemp, dbkph, dbrpm, dbvolt);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
