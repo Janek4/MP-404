@@ -4,7 +4,7 @@
 #include <BluetoothSerial.h>
 #include "ELMduino.h"
 #include <TM1637Display.h>
-//const bool DEBUG        = true;
+//const bool DEBUGBT        = true;
 const int  TIMEOUT      = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
@@ -29,18 +29,18 @@ TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
 const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL_RATE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-float fuel = 0;
+//float fuel = 0;
 float dbrpm;
 float dbkph;
 float dbtemp;
 float dbvolt;
-float dbfuel;
+//float dbfuel;
 float dbkph2;
 
 void connectToWiFi() {
@@ -135,14 +135,14 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
-        obd_state = FUEL_RATE;
+        obd_state = ENG_RPM;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
-        obd_state = FUEL_RATE;
+        obd_state = ENG_RPM;
       }
       break;
     }
-    case FUEL_RATE: {
+    /*case FUEL_RATE: {
       fuel = ELMo.fuelRate();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("fuel: ");
@@ -155,7 +155,7 @@ void loop() {
         obd_state = ENG_RPM;
       }
       break;
-    }
+    }*/
   }
 
   if (currentMillis - previousMillis >= interval && dbrpm >= 500) {
