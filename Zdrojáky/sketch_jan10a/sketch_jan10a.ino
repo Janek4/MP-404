@@ -107,7 +107,7 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
-        dbkph2 = dbkph * 0,912;
+        dbkph2 = dbkph * 1,123;
         display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
