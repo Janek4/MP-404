@@ -4,8 +4,8 @@
 #include <BluetoothSerial.h>
 #include "ELMduino.h"
 #include <TM1637Display.h>
-//const bool DEBUGBT        = true;
-const int  TIMEOUT      = 2000;
+
+const int TIMEOUT = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
 char user[] = "TEST_SUBJECT1";
@@ -13,10 +13,12 @@ char password[] = "#ovoANKhvH7";
 char db[] = "DB_TEST";
 char ssid[] = "2Girls1ESP";
 char pwd[] = "87654321";
+
 WiFiClient client;
 MySQL_Connection conn(&client);
 BluetoothSerial SerialBT;
 ELM327 ELMo;
+
 #define ELM_PORT SerialBT
 #define DEBUG_PORT Serial
 #define CLK_PIN_1 26
@@ -27,47 +29,65 @@ ELM327 ELMo;
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 1000;
+const unsigned long interval = 5000;
 unsigned long previousMillis = 0;
+unsigned long previousDBCheckMillis = 0;
+unsigned long previousDBConnectMillis = 0;
+bool dbConnected = false;
+
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
 float temp = 0;
 float volt = 0;
-//float fuel = 0;
 float dbrpm;
 float dbkph;
 float dbtemp;
 float dbvolt;
-//float dbfuel;
-float dbkph2;
+int dbkph2;
 
-void connectToWiFi() {
+void WiFiconn() {
   WiFi.begin(ssid, pwd);
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
+  Serial.print("Connecting to WiFi...");
+  unsigned long startAttemptTime = millis();
+  while (WiFi.status() != WL_CONNECTED && millis() - startAttemptTime < 4000) {
+    delay(500);
+    Serial.print(".");
   }
-  Serial.println("Connected to WiFi");
+  if (WiFi.status() == WL_CONNECTED) {
+    Serial.println("\nConnected to WiFi");
+    digitalWrite(LED_BUILTIN, HIGH);
+  } else {
+    Serial.println("\nFailed to connect to WiFi");
+    digitalWrite(LED_BUILTIN, LOW);
+    }
+}
+
+void DBconn() {
+  if (!dbConnected || (millis() - previousDBConnectMillis > 5000)) {
+    if (conn.connect(server, 3306, user, password, db)) {
+      Serial.println("Connected to MySQL server");
+      dbConnected = true;
+    } else {
+      Serial.println("Connection to MySQL server failed.");
+      dbConnected = false;
+    }
+    previousDBConnectMillis = millis();
+  }
 }
 
 void setup() {
   Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
 
-  connectToWiFi();
+  WiFiconn();
+  DBconn();
+
   uint8_t mac[6];
-  
   WiFi.macAddress(mac);
   Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
-  if (conn.connect(server, 3306, user, password, db)) {
-    Serial.println("Connected to MySQL server");
-    digitalWrite(LED_BUILTIN, HIGH);
-  } else {
-    Serial.println("Connection failed.");
-    while (1);
-  }
+
   display1.setBrightness(7);
   display2.setBrightness(7);
   SerialBT.begin("OBD II", true);
@@ -81,9 +101,18 @@ void setup() {
   }
   Serial.println("Connected to ELM327");
 }
+
 void loop() {
   unsigned long currentMillis = millis();
-  //float rpm, kph, temp, volt;
+  if (currentMillis - previousDBCheckMillis >= 30000) {
+    Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
+    previousDBCheckMillis = currentMillis;
+  }
+
+  if (!dbConnected) {
+    DBconn();
+  }
+  //čtení dat z OBD
   switch (obd_state) {
     case ENG_RPM: {
       rpm = ELMo.rpm();
@@ -91,10 +120,8 @@ void loop() {
         Serial.print("rpm: ");
         Serial.println(rpm);
         dbrpm = rpm;
-        if (rpm != 0) {
-          display2.showNumberDec(rpm, false);
-          obd_state = SPEED;
-        }
+        display2.showNumberDec(rpm, false);
+        obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
         obd_state = SPEED;
@@ -107,7 +134,6 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
-        dbkph2 = dbkph * 1,123;
         display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -142,25 +168,13 @@ void loop() {
       }
       break;
     }
-    /*case FUEL_RATE: {
-      fuel = ELMo.fuelRate();
-      if (ELMo.nb_rx_state == ELM_SUCCESS) {
-        Serial.print("fuel: ");
-        Serial.println(fuel);
-        dbfuel = fuel;
-        obd_state = ENG_RPM;
-      }
-      else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
-        ELMo.printError();
-        obd_state = ENG_RPM;
-      }
-      break;
-    }*/
   }
 
-  if (currentMillis - previousMillis >= interval && dbrpm >= 500) {
+  dbkph2 = int(dbkph * 1.123);
+
+ if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
     char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
