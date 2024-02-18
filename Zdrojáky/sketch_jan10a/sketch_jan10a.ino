@@ -67,10 +67,10 @@ void WiFiconn() {
 void DBconn() {
   if (!dbConnected || (millis() - previousDBConnectMillis > 5000)) {
     if (conn.connect(server, 3306, user, password, db)) {
-      Serial.println("Connected to MySQL server");
+      Serial.println("Connected to MariaDB server");
       dbConnected = true;
     } else {
-      Serial.println("Connection to MySQL server failed.");
+      Serial.println("Connection to MariaDB server failed.");
       dbConnected = false;
     }
     previousDBConnectMillis = millis();
@@ -174,7 +174,7 @@ void loop() {
 
  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
     char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
