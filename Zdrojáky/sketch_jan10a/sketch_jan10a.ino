@@ -29,11 +29,13 @@ ELM327 ELMo;
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 5000;
+const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
 unsigned long previousDBCheckMillis = 0;
 unsigned long previousDBConnectMillis = 0;
 bool dbConnected = false;
+int numDBConnectFails = 0;
+const int DBconnF = 3;
 
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
@@ -61,7 +63,7 @@ void WiFiconn() {
   } else {
     Serial.println("\nFailed to connect to WiFi");
     digitalWrite(LED_BUILTIN, LOW);
-    }
+  }
 }
 
 void DBconn() {
@@ -69,11 +71,19 @@ void DBconn() {
     if (conn.connect(server, 3306, user, password, db)) {
       Serial.println("Connected to MariaDB server");
       dbConnected = true;
+      numDBConnectFails = 0; // Resetujeme počet neúspěšných pokusů
     } else {
       Serial.println("Connection to MariaDB server failed.");
       dbConnected = false;
+      numDBConnectFails++;
     }
     previousDBConnectMillis = millis();
+  }
+
+  if (numDBConnectFails >= DBconnF) {
+    Serial.println("Reached maximum number of failed DB connection attempts. Rebooting...");
+    delay(2000);
+    ESP.restart();
   }
 }
 
@@ -104,7 +114,7 @@ void setup() {
 
 void loop() {
   unsigned long currentMillis = millis();
-  if (currentMillis - previousDBCheckMillis >= 30000) {
+  if (currentMillis - previousDBCheckMillis >= 10000) {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
     previousDBCheckMillis = currentMillis;
   }
@@ -172,12 +182,12 @@ void loop() {
 
   dbkph2 = int(dbkph * 1.123);
 
- if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
-    char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
-    MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
-    cur_mem->execute(query);
-    delete cur_mem;
-    previousMillis = currentMillis;
-  }
+  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
+      char query[128];
+      sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+      MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
+      cur_mem->execute(query);
+      delete cur_mem;
+      previousMillis = currentMillis;
+    }
 }
