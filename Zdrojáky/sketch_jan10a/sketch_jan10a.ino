@@ -26,6 +26,7 @@ ELM327 ELMo;
 #define CLK_PIN_2 33
 #define DIO_PIN_2 32
 #define LED_BUILTIN 2
+#define POT 13 
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
@@ -36,6 +37,7 @@ unsigned long previousDBConnectMillis = 0;
 bool dbConnected = false;
 int numDBConnectFails = 0;
 const int DBconnF = 3;
+const float odchylka = 1.123;
 
 typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
@@ -48,6 +50,8 @@ float dbkph;
 float dbtemp;
 float dbvolt;
 int dbkph2;
+
+float prevodnicek;
 
 void WiFiconn() {
   WiFi.begin(ssid, pwd);
@@ -94,6 +98,9 @@ void setup() {
   WiFiconn();
   DBconn();
 
+  display1.setBrightness(7);
+  display2.setBrightness(7);
+
   uint8_t mac[6];
   WiFi.macAddress(mac);
   Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
@@ -113,6 +120,12 @@ void setup() {
 }
 
 void loop() {
+  int potValue = analogRead(POT);
+  int bright = map(potValue, 0, 1023, 0, 7);
+
+  display1.setBrightness(bright);
+  display2.setBrightness(bright);
+
   unsigned long currentMillis = millis();
   if (currentMillis - previousDBCheckMillis >= 10000) {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
@@ -138,6 +151,7 @@ void loop() {
       }
       break;
     }
+
     case SPEED: {
       kph = ELMo.kph();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
@@ -152,6 +166,7 @@ void loop() {
       }
       break;
     }
+
     case TEMPERATURE: {
       temp = ELMo.engineCoolantTemp();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
@@ -165,6 +180,7 @@ void loop() {
       }
       break;
     }
+
     case VOLTAGE: {
       volt = ELMo.batteryVoltage();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
@@ -180,7 +196,8 @@ void loop() {
     }
   }
 
-  dbkph2 = int(dbkph * 1.123);
+  prevodnicek = dbkph * odchylka;
+  dbkph2 = (int)prevodnicek;
 
   if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
       char query[128];
