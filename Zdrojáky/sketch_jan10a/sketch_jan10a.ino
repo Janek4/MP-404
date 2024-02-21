@@ -130,6 +130,7 @@ void loop() {
   if (currentMillis - previousDBCheckMillis >= 10000) {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
     previousDBCheckMillis = currentMillis;
+    Serial.print("jas: " + bright);
   }
 
   if (!dbConnected) {
