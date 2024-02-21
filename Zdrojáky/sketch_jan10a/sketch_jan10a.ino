@@ -121,7 +121,7 @@ void setup() {
 
 void loop() {
   int potValue = analogRead(POT);
-  int bright = map(potValue, 0, 1023, 0, 7);
+  int bright = map(potValue, 0, 4095, 0, 7);
 
   display1.setBrightness(bright);
   display2.setBrightness(bright);
@@ -144,6 +144,8 @@ void loop() {
         Serial.println(rpm);
         dbrpm = rpm;
         display2.showNumberDec(rpm, false);
+        display1.setBrightness(bright);
+        display2.setBrightness(bright);
         obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -196,12 +198,14 @@ void loop() {
     }
   }
 
-  prevodnicek = dbkph * odchylka;
-  dbkph2 = (int)prevodnicek;
+  dbkph2 = dbkph * 1.123; 
+
+  /*prevodnicek = dbkph * odchylka;
+  dbkph2 = (int)prevodnicek;*/
 
   if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
       char query[128];
-      sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+      sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
       MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
       cur_mem->execute(query);
       delete cur_mem;
