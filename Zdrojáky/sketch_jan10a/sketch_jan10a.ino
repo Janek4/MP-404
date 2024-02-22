@@ -39,7 +39,7 @@ int numDBConnectFails = 0;
 const int DBconnF = 3;
 const float odchylka = 1.123;
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, BRIGHT} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
@@ -98,15 +98,12 @@ void setup() {
   WiFiconn();
   DBconn();
 
-  display1.setBrightness(7);
-  display2.setBrightness(7);
-
   uint8_t mac[6];
   WiFi.macAddress(mac);
   Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 
-  display1.setBrightness(7);
-  display2.setBrightness(7);
+  display1.setBrightness(4);
+  display2.setBrightness(4);
   SerialBT.begin("OBD II", true);
   if (!ELM_PORT.connect("OBD II")) {
     DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
@@ -120,17 +117,11 @@ void setup() {
 }
 
 void loop() {
-  int potValue = analogRead(POT);
-  int bright = map(potValue, 0, 4095, 0, 7);
-
-  display1.setBrightness(bright);
-  display2.setBrightness(bright);
-
   unsigned long currentMillis = millis();
+  unsigned long currentMillisDB = millis();
   if (currentMillis - previousDBCheckMillis >= 10000) {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
-    previousDBCheckMillis = currentMillis;
-    Serial.print("jas: " + bright);
+    previousDBCheckMillis = currentMillisDB;
   }
 
   if (!dbConnected) {
@@ -145,8 +136,6 @@ void loop() {
         Serial.println(rpm);
         dbrpm = rpm;
         display2.showNumberDec(rpm, false);
-        display1.setBrightness(bright);
-        display2.setBrightness(bright);
         obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -190,11 +179,22 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
-        obd_state = ENG_RPM;
+        obd_state = BRIGHT;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
-        obd_state = ENG_RPM;
+        obd_state = BRIGHT;
       }
+      break;
+    }
+    case BRIGHT: {
+        int potValue = analogRead(POT);
+        int bright = map(potValue, 0, 4095, 0, 7);
+        Serial.print("brightness: ");
+        Serial.println(bright);
+        display1.setBrightness(bright);
+        display2.setBrightness(bright);
+
+        obd_state = ENG_RPM;
       break;
     }
   }
