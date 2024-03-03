@@ -27,10 +27,12 @@ ELM327 ELMo;
 #define DIO_PIN_2 32
 #define LED_BUILTIN 2
 #define POT 35 
+#define SWITCH1 14
+#define SWITCH2 15
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 1000;
+const unsigned long interval = 5000;
 unsigned long previousMillis = 0;
 unsigned long previousDBCheckMillis = 0;
 unsigned long previousDBConnectMillis = 0;
@@ -39,7 +41,7 @@ int numDBConnectFails = 0;
 const int DBconnF = 3;
 const float odchylka = 1.123;
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, BRIGHT} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
@@ -50,6 +52,8 @@ float dbkph;
 float dbtemp;
 float dbvolt;
 int dbkph2;
+bool switch1s;
+bool switch2s;
 
 float prevodnicek;
 
@@ -94,6 +98,8 @@ void DBconn() {
 void setup() {
   Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(SWITCH1, INPUT);
+  pinMode(SWITCH2, INPUT);
 
   WiFiconn();
   DBconn();
@@ -102,8 +108,8 @@ void setup() {
   WiFi.macAddress(mac);
   Serial.printf("MAC Address: %02X:%02X:%02X:%02X:%02X:%02X\n", mac[0], mac[1], mac[2], mac[3], mac[4], mac[5]);
 
-  display1.setBrightness(4);
-  display2.setBrightness(4);
+  /*display1.setBrightness(4);
+  display2.setBrightness(4);*/
   SerialBT.begin("OBD II", true);
   if (!ELM_PORT.connect("OBD II")) {
     DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
@@ -123,6 +129,14 @@ void loop() {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
     previousDBCheckMillis = currentMillisDB;
   }
+  
+  int potValue = analogRead(POT);
+  int bright = map(potValue, 0, 4095, 0, 7);
+  /*Serial.print("brightness: ");
+  Serial.println(bright);*/
+  display1.setBrightness(bright);
+  display2.setBrightness(bright);
+
 
   if (!dbConnected) {
     DBconn();
@@ -135,7 +149,6 @@ void loop() {
         Serial.print("rpm: ");
         Serial.println(rpm);
         dbrpm = rpm;
-        display2.showNumberDec(rpm, false);
         obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -150,7 +163,6 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
-        display1.showNumberDec(kph, false);
         obd_state = TEMPERATURE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -179,27 +191,31 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
-        obd_state = BRIGHT;
+        obd_state = ENG_RPM;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
-        obd_state = BRIGHT;
+        obd_state = ENG_RPM;
       }
       break;
     }
-    case BRIGHT: {
-        int potValue = analogRead(POT);
-        int bright = map(potValue, 0, 4095, 0, 7);
-        Serial.print("brightness: ");
-        Serial.println(bright);
-        display1.setBrightness(bright);
-        display2.setBrightness(bright);
-
-        obd_state = ENG_RPM;
-      break;
-    }
+  }
+  
+  if (SWITCH1 == LOW) {
+    switch1s = false;
+    display1.showNumberDec(dbkph, false);
+  } else if (SWITCH1 == HIGH) {
+    switch1s = true;
+    display1.showNumberDec(dbtemp, false);
+  }
+  if (SWITCH2 == LOW) {
+    switch2s = false;
+    display2.showNumberDec(dbrpm, false);
+  } else if (SWITCH2 == HIGH) {
+    switch1s = true;
+    display2.showNumberDec(dbvolt, false);
   }
 
-  dbkph2 = dbkph * 1.123; 
+  dbkph2 = dbkph * 1.11; 
 
   /*prevodnicek = dbkph * odchylka;
   dbkph2 = (int)prevodnicek;*/
