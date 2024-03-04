@@ -27,8 +27,8 @@ ELM327 ELMo;
 #define DIO_PIN_2 32
 #define LED_BUILTIN 2
 #define POT 35 
-#define SWITCH1 14
-#define SWITCH2 15
+#define SWITCH1 27
+#define SWITCH2 14
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
@@ -52,8 +52,8 @@ float dbkph;
 float dbtemp;
 float dbvolt;
 int dbkph2;
-bool switch1s;
-bool switch2s;
+bool switch1s = false;
+bool switch2s = false;
 
 float prevodnicek;
 
@@ -136,8 +136,22 @@ void loop() {
   Serial.println(bright);*/
   display1.setBrightness(bright);
   display2.setBrightness(bright);
-
-
+/*
+  if (SWITCH1 == LOW || switch1s == false) {
+    switch1s = false;
+    display1.showNumberDec(dbkph, false);
+  } else if (SWITCH1 == HIGH || switch1s == true) {
+    switch1s = true;
+    display1.showNumberDec(dbtemp, false);
+  }
+  if (SWITCH2 == LOW || switch2s == false) {
+    switch2s = false;
+    display2.showNumberDec(dbrpm, false);
+  } else if (SWITCH2 == HIGH || switch2s == true) {
+    switch1s = true;
+    display2.showNumberDec(dbvolt, false);
+  }
+*/
   if (!dbConnected) {
     DBconn();
   }
@@ -149,6 +163,7 @@ void loop() {
         Serial.print("rpm: ");
         Serial.println(rpm);
         dbrpm = rpm;
+       
         obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -163,6 +178,10 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
+        if (SWITCH1 == LOW || switch1s == false) {
+          switch1s = false;
+          display1.showNumberDec(dbkph, false);
+        } 
         obd_state = TEMPERATURE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -177,6 +196,10 @@ void loop() {
         Serial.print("temp: ");
         Serial.println(temp);
         dbtemp = temp;
+        if (SWITCH1 == HIGH || switch1s == true) {
+          switch1s = true;
+          display1.showNumberDec(dbtemp, false);
+        }
         obd_state = VOLTAGE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -191,6 +214,10 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
+        if (SWITCH2 == HIGH || switch2s == true) {
+          switch1s = true;
+          display2.showNumberDec(dbvolt, false);
+        }
         obd_state = ENG_RPM;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -200,27 +227,13 @@ void loop() {
     }
   }
   
-  if (SWITCH1 == LOW) {
-    switch1s = false;
-    display1.showNumberDec(dbkph, false);
-  } else if (SWITCH1 == HIGH) {
-    switch1s = true;
-    display1.showNumberDec(dbtemp, false);
-  }
-  if (SWITCH2 == LOW) {
-    switch2s = false;
-    display2.showNumberDec(dbrpm, false);
-  } else if (SWITCH2 == HIGH) {
-    switch1s = true;
-    display2.showNumberDec(dbvolt, false);
-  }
-
+  
   dbkph2 = dbkph * 1.11; 
 
   /*prevodnicek = dbkph * odchylka;
   dbkph2 = (int)prevodnicek;*/
 
-  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
+  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm >= 600 && dbvolt != 0) {
       char query[128];
       sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
       MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
