@@ -52,8 +52,8 @@ float dbkph;
 float dbtemp;
 float dbvolt;
 int dbkph2;
-bool switch1s = false;
-bool switch2s = false;
+int switch1s = 0;
+int switch2s = 0;
 
 float prevodnicek;
 
@@ -129,6 +129,10 @@ void loop() {
     Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
     previousDBCheckMillis = currentMillisDB;
   }
+
+  switch1s = digitalRead(SWITCH1);
+  switch2s = digitalRead(SWITCH2);
+
   
   int potValue = analogRead(POT);
   int bright = map(potValue, 0, 4095, 0, 7);
@@ -163,7 +167,10 @@ void loop() {
         Serial.print("rpm: ");
         Serial.println(rpm);
         dbrpm = rpm;
-       
+        if (switch2s == LOW/* || switch2s == false*/) {
+          //switch2s = false;
+          display2.showNumberDec(dbrpm, false);
+        }
         obd_state = SPEED;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
@@ -178,8 +185,8 @@ void loop() {
         Serial.print("kph: ");
         Serial.println(kph);
         dbkph = kph;
-        if (SWITCH1 == LOW || switch1s == false) {
-          switch1s = false;
+        if (switch1s == LOW/* || switch1s == false*/) {
+          //switch1s = false;
           display1.showNumberDec(dbkph, false);
         } 
         obd_state = TEMPERATURE;
@@ -196,8 +203,8 @@ void loop() {
         Serial.print("temp: ");
         Serial.println(temp);
         dbtemp = temp;
-        if (SWITCH1 == HIGH || switch1s == true) {
-          switch1s = true;
+        if (switch1s == HIGH/* || switch1s == true*/) {
+          //switch1s = true;
           display1.showNumberDec(dbtemp, false);
         }
         obd_state = VOLTAGE;
@@ -214,8 +221,8 @@ void loop() {
         Serial.print("volt: ");
         Serial.println(volt);
         dbvolt = volt;
-        if (SWITCH2 == HIGH || switch2s == true) {
-          switch1s = true;
+        if (switch2s == HIGH/* || switch2s == true*/) {
+          //switch1s = true;
           display2.showNumberDec(dbvolt, false);
         }
         obd_state = ENG_RPM;
