@@ -205,7 +205,7 @@ void loop() {
         dbtemp = temp;
         if (switch1s == HIGH/* || switch1s == true*/) {
           //switch1s = true;
-          display1.showNumberDec(dbtemp, false);
+          display1.showNumberDecEx(dbtemp * 10, 0b00100000, false);
         }
         obd_state = VOLTAGE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -223,7 +223,7 @@ void loop() {
         dbvolt = volt;
         if (switch2s == HIGH/* || switch2s == true*/) {
           //switch1s = true;
-          display2.showNumberDec(dbvolt, false);
+          display2.showNumberDecEx(dbvolt * 10, 0b00100000, false);
         }
         obd_state = ENG_RPM;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
