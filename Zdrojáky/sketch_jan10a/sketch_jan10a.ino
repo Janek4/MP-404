@@ -24,7 +24,7 @@ ELM327 ELMo;
 #define CLK_PIN_1 26
 #define DIO_PIN_1 25 
 #define CLK_PIN_2 33
-#define DIO_PIN_2 32
+#define DIO_PIN_2 34 //32
 #define LED_BUILTIN 2
 #define POT 35 
 #define SWITCH1 27
@@ -32,7 +32,7 @@ ELM327 ELMo;
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
-const unsigned long interval = 5000;
+const unsigned long interval = 1000;
 unsigned long previousMillis = 0;
 unsigned long previousDBCheckMillis = 0;
 unsigned long previousDBConnectMillis = 0;
