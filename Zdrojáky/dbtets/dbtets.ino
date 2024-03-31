@@ -3,9 +3,9 @@
 #include <MySQL_Cursor.h>
 
 IPAddress server(91, 103, 163, 85);
-char user[] = "TEST_SUBJECT1";
-char password[] = "#ovoANKhvH7";
-char db[] = "DB_TEST";
+char user[] = "ESP";
+char password[] = "";
+char db[] = "MP_404";
 
 char ssid[] = "2Girls1ESP";
 char pwd[] = "87654321";
@@ -86,7 +86,7 @@ void loop() {
   // Pokud je připojení k databázi a uplynulo interval, vložíme data do databáze
   if (dbConnected && currentMillis - previousMillis >= interval && dbrpm != 0 && dbvolt != 0) {
     char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLTAGE) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLT) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;

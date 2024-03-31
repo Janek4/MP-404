@@ -79,7 +79,7 @@ void DBconn() {
     if (conn.connect(server, 3306, user, password, db)) {
       Serial.println("Connected to MariaDB server");
       dbConnected = true;
-      numDBConnectFails = 0; // Resetujeme počet neúspěšných pokusů
+      numDBConnectFails = 0;
     } else {
       Serial.println("Connection to MariaDB server failed.");
       dbConnected = false;
@@ -89,7 +89,7 @@ void DBconn() {
   }
 
   if (numDBConnectFails >= DBconnF) {
-    Serial.println("Reached maximum number of failed DB connection attempts. Rebooting...");
+    Serial.println("maxi number of failed DB connection attempts. Rebooting...");
     delay(2000);
     ESP.restart();
   }
@@ -126,7 +126,7 @@ void loop() {
   unsigned long currentMillis = millis();
   unsigned long currentMillisDB = millis();
   if (currentMillis - previousDBCheckMillis >= 10000) {
-    Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
+    //Serial.println(dbConnected ? "Connected to database" : "Not connected to database");
     previousDBCheckMillis = currentMillisDB;
   }
 

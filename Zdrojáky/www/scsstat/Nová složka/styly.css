@@ -1,0 +1,41 @@
+body {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#header {
+    text-align: center;
+    padding: 10px;
+}
+
+#content {
+    padding: 5px;
+}
+
+#footer {
+    clear: both;
+    padding: 10px;
+    color: #2000c0;
+    text-align: left;
+}
+.container {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a:link {
+    color: #2000c0
+}
+
+a:visited {
+    color: #8000c0
+}
+
+a:active {color: #ff0000
+}
