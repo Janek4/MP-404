@@ -126,7 +126,7 @@
             var rychlost2Data = <?php echo json_encode($SPEED2); ?>;
             var otackyData = <?php echo json_encode($RPMS); ?>;
             var napetiData = <?php echo json_encode($VOLTAGE); ?>;
-           // var spotrebaData = <?php echo json_encode($FUEL_RATE); ?>;
+           // var spotrebaData = <#?php echo json_encode($FUEL_RATE); ?>;
             
             var ctxTeplota = document.getElementById('grafTeplota').getContext('2d');
             var ctxRychlost = document.getElementById('grafRychlost').getContext('2d');
