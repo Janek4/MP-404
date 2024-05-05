@@ -41,7 +41,9 @@ int numDBConnectFails = 0;
 const int DBconnF = 3;
 const float odchylka = 1.123;
 
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL} obd_pid_states;
+//typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
 float kph = 0;
@@ -54,8 +56,6 @@ float dbtemp;
 float dbvolt;
 float dbfuel;
 int dbkph2;
-int switch1s = 0;
-int switch2s = 0;
 int prevdbrpmcounter = 0;
 float prevdbrpm;
 float prevodnicek;
@@ -93,12 +93,25 @@ void DBconn() {
     }
     previousDBConnectMillis = millis();
   }
-
+//funguje, když se tomu chce
   if (numDBConnectFails >= DBconnF) {
     Serial.println("max number of failed DB connection attempts. Rebooting..."); //soft reset
     delay(2000);
     ESP.restart();
   }
+}
+
+void BTconn() {
+  SerialBT.begin("OBD II", true);
+    if (!ELM_PORT.connect("OBD II")) {
+      DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
+      while (1);
+    }
+    if (!ELMo.begin(ELM_PORT, true, 4000)) {
+      Serial.println("Couldn't connect to OBD scanner - Phase 2");
+      while (1);
+    }
+    Serial.println("Connected to ELM327");
 }
 
 void setup() {
@@ -107,23 +120,16 @@ void setup() {
   pinMode(SWITCH1, INPUT);
   pinMode(SWITCH2, INPUT);
 
+  
   WiFiconn();
   DBconn();
-
+  BTconn();
 
   /*display1.setBrightness(4);
   display2.setBrightness(4);*/
-  SerialBT.begin("OBDII", true);
-  if (!ELM_PORT.connect("OBDII")) {
-    DEBUG_PORT.println("Couldn't connect to OBD scanner - Phase 1");
-    while (1);
-  }
-  if (!ELMo.begin(ELM_PORT, true, 4000)) {
-    Serial.println("Couldn't connect to OBD scanner - Phase 2");
-    while (1);
-  }
-  Serial.println("Connected to ELM327");
+  
 }
+
 
 void loop() {
   unsigned long currentMillis = millis();
@@ -133,8 +139,8 @@ void loop() {
     previousDBCheckMillis = currentMillisDB;
   }
 
-  switch1s = digitalRead(SWITCH1);
-  switch2s = digitalRead(SWITCH2);
+  int switch1s = digitalRead(SWITCH1);
+  int switch2s = digitalRead(SWITCH2);
 
   
   int potValue = analogRead(POT);
@@ -193,7 +199,7 @@ void loop() {
         dbtemp = temp;
         if (switch1s == HIGH) {
           //switch1s = true;
-          display1.showNumberDecEx(dbtemp, false, 4, 0);
+          display1.showNumberDecEx(dbtemp, false);
         }
         obd_state = VOLTAGE;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
@@ -211,16 +217,19 @@ void loop() {
         dbvolt = volt;
         if (switch2s == HIGH) {
           //switch1s = true;
-          display2.showNumberDecEx(dbvolt * 10, false, 4, 0);
+          display2.showNumberDecEx(dbvolt, false);
         }
-        obd_state = FUEL;
+        //obd_state = FUEL;
+        obd_state = ENG_RPM;
       } else if (ELMo.nb_rx_state != ELM_GETTING_MSG) {
         ELMo.printError();
-        obd_state = FUEL;
+        //obd_state = FUEL;
+        obd_state = ENG_RPM;
       }
       break;
     }
-    case FUEL: {
+
+    /*case FUEL: {
       fuel = ELMo.fuelRate();
       if (ELMo.nb_rx_state == ELM_SUCCESS) {
         Serial.print("fuel: ");
@@ -232,7 +241,7 @@ void loop() {
         obd_state = ENG_RPM;
       }
       break;
-    }
+    }*/
   }
 
   dbkph2 = dbkph * 1.11; 
@@ -240,7 +249,8 @@ void loop() {
 
   /*prevodnicek = dbkph * odchylka;
   dbkph2 = (int)prevodnicek;*/
-  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm >= 600 && dbvolt != 0 && dbvolt <= 20 && dbspeed <= 300) {
+
+  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm >= 600 && dbvolt != 0/* && dbvolt <= 20 && dbspeed <= 300*/) {
     if (dbrpm != prevdbrpm) {
       if (prevdbrpm == dbrpm) {
         prevdbrpmcounter++;
@@ -250,7 +260,8 @@ void loop() {
       prevdbrpm = dbrpm;
     }
 
-    if (prevdbrpmcounter >= 5 && SerialBT.hasClient() == 0 && dbrpm != 0) {
+    //nefunguje
+    if (prevdbrpmcounter >= 15 || SerialBT.hasClient() == 0 && dbrpm != 0) {
       dbrpm = 0;
       display1.clear();
       display2.clear();
@@ -259,7 +270,8 @@ void loop() {
     }
 
     char query[128];
-    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLT, FUEL) VALUES (%lf, %lf, %d, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt, dbfuel);
+    sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLT) VALUES (%lf, %lf, %d, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt);
+    //sprintf(query, "INSERT INTO DATA (TEMP, SPEED, SPEED2, RPMS, VOLT, FUEL) VALUES (%lf, %lf, %d, %lf, %lf, %lf)", dbtemp, dbkph, dbkph2, dbrpm, dbvolt, dbfuel);
     MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
     cur_mem->execute(query);
     delete cur_mem;
