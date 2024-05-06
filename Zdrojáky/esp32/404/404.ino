@@ -27,8 +27,8 @@ ELM327 ELMo;
 #define DIO_PIN_2 32 //23 //34 //32
 #define LED_BUILTIN 2
 #define POT 35 
-#define SWITCH1 27
-#define SWITCH2 14
+#define SWITCH1 34 //27
+#define SWITCH2 39 //14
 
 TM1637Display display1(CLK_PIN_1, DIO_PIN_1);
 TM1637Display display2(CLK_PIN_2, DIO_PIN_2);
