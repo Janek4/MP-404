@@ -8,9 +8,9 @@
 const int TIMEOUT = 2000;
 const bool HALT_ON_FAIL = false;
 IPAddress server(91, 103, 163, 85);
-char user[] = "ESP";
+char user[] = "V40_ESP";
 char password[] = "";
-char db[] = "MP_404";
+char db[] = "MP_404_V40";
 char ssid[] = "2Girls1ESP";
 char pwd[] = "87654321";
 
@@ -41,8 +41,8 @@ int numDBConnectFails = 0;
 const int DBconnF = 3;
 const float odchylka = 1.123;
 
-//typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL} obd_pid_states;
-typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
+typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE, FUEL} obd_pid_states;
+//typedef enum {ENG_RPM, SPEED, TEMPERATURE, VOLTAGE} obd_pid_states;
 
 obd_pid_states obd_state = ENG_RPM;
 float rpm = 0;
@@ -255,13 +255,11 @@ void loop() {
   if (dbkph >= 151) {
     dbkph2 = dbkph + 5;
   }
-   
-  
 
   /*prevodnicek = dbkph * odchylka;
   dbkph2 = (int)prevodnicek;*/
 
-  if (dbConnected && currentMillis - previousMillis >= interval && dbrpm >= 600 && dbvolt != 0/* && dbvolt <= 20 && dbspeed <= 300*/) {
+  if (dbConnected && currentMillis - previousMillis >= interval && /*dbrpm >= 600 && */dbvolt != 0/* && dbvolt <= 20 && dbspeed <= 300*/) {
     if (dbrpm != prevdbrpm) {
       if (prevdbrpm == dbrpm) {
         prevdbrpmcounter++;
@@ -272,7 +270,7 @@ void loop() {
     }
 
     //nefunguje
-    if (prevdbrpmcounter >= 15 || SerialBT.hasClient() == 0 && dbrpm != 0) {
+    if (prevdbrpmcounter >= 15 || SerialBT.hasClient() == 0/* && dbrpm != 0*/) {
       dbrpm = 0;
       display1.clear();
       display2.clear();
